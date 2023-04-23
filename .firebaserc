@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "bloody-trail",
+    "staging": "bloody-trail"
+  },
+  "targets": {},
+  "etags": {}
+}

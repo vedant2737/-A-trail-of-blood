@@ -1,0 +1,239 @@
+import injection from '../img/injection.png';
+import syrup from '../img/syrup.png';
+import medicalKit from '../img/medical-kit.png';
+import medicines from '../img/medicines.png';
+import scissor from '../img/scissors.png';
+import mask from '../img/mask.png';
+import heart from '../img/heart.png'
+import loseBorder from '../img/border.png'
+import { useContext, useEffect, useState } from 'react';
+import { ScoreContext } from '../context/ScoreContext';
+import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+import Message from './Message';
+const message = "You are in a dire situation and must act quickly to find the necessary medical items. Search your surroundings carefully and pay close attention to the hints I provide.Time is of the essence, so do not waste a moment. Your survival depends on finding the medical items before it's too late.Stay strong, player. I am here to guide you through this difficult time.";
+
+const Win = () => {
+  const navigate = useNavigate();
+  const { score, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { user } = useContext(UserContext)
+  const handleHomeClick = () => {
+    setFoundEle([])
+    setNum(0)
+    setStage("stages");
+    navigate("/stages");
+  }
+  const handleNextClick = () => {
+    setFoundEle([])
+    setNum(0)
+    setStage("theme3");
+    navigate("/theme3")
+  }
+  return (
+    <>
+      <div className='Win Box2'></div>
+      <div className='win-box'>
+        <div className='container'>
+          <div className="sketchfab-embed-wrapper game">
+            <iframe
+              title="My 3D Model"
+              frameBorder="0"
+              allow="autoplay; fullscreen; vr"
+              muted
+              height="100%"
+              width="110%"
+              src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
+            // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
+            />
+          </div>
+        </div>
+        <p className='win'>You Win</p>
+        <p className='level'>Level 2 Completed</p>
+        <p className='score'>Your Score : {score}</p>
+        <p className='score'>Your Max Score : {user.maxScore}</p>
+        <div class="buttons">
+          <button onClick={handleHomeClick} className='home'>Home</button>
+          <button onClick={handleNextClick} className='restart'>Next</button>
+        </div>
+      </div>
+    </>
+  )
+}
+
+const Lose = () => {
+  const navigate = useNavigate();
+  const { score, setScore, setUnlock, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { user } = useContext(UserContext)
+  const handleHomeClick = () => {
+    setUnlock(1);
+    setFoundEle([]);
+    setNum(0);
+    setScore(0);
+    setStage("stages");
+    navigate("/stages");
+  }
+  return (
+    <>
+      <div className='Alert Box2'></div>
+      <div className='lose-box'>
+        <img className="border-img" src={loseBorder} alt="." />
+        <p className='lose'>You Lose</p>
+        <p className='score'>Your Score : {score}</p>
+        <p className='score'>Your Max Score : {user.maxScore}</p>
+        <button onClick={handleHomeClick} className='home'>Home</button>
+      </div>
+    </>
+  )
+}
+
+const WrongAlert = ({ setWrong }) => {
+  setTimeout(() => {
+    setWrong(false)
+  }, 300);
+  return (
+    <div className='Alert Box2'></div>
+  )
+}
+
+const Theme2 = () => {
+  const [clue1, setClue1] = useState(true)
+  const [clue2, setClue2] = useState(true)
+  const [clue3, setClue3] = useState(true)
+  const [clue4, setClue4] = useState(true)
+  const [clue5, setClue5] = useState(true)
+  const [clue6, setClue6] = useState(true)
+  const [lives, setLives] = useState(2)
+  const [msg, setMsg] = useState(true)
+  const [show, setShow] = useState(false)
+  const [wrong, setWrong] = useState(false)
+  const [win, setWin] = useState(false)
+  const [lose, setLose] = useState(false)
+  const [timer, setTimer] = useState(0)
+  const [k, setK] = useState(0)
+  const [cRed, setCRed] = useState("")
+  const { score, setScore, setUnlock, unlock, foundEle, setFoundEle, stage, setStage, num, setNum } = useContext(ScoreContext);
+  const { currentUser, user, setUser } = useContext(UserContext)
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!currentUser) { navigate("/"); }
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (unlock >= 2) { setShow(true) }
+    else { navigate("/stages") }
+  }, [unlock]);
+
+  useEffect(() => {
+    const k = "/" + stage;
+    navigate(k);
+  }, [stage])
+
+  useEffect(() => {
+    const time = setInterval(() => {
+      if (timer > 0) {
+        if (timer == 6) { setCRed("c-red") }
+        setTimer(timer - 1);
+      } else {
+        if (k) {
+          setLose(true)
+          setNum(0);
+          setFoundEle([]);
+          setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+        }
+        clearInterval(time);
+      }
+    }, 1000);
+    return () => clearInterval(time);
+  }, [timer]);
+
+  useEffect(() => {
+    if (score > user.maxScore) {
+      setUser({ ...user, maxScore: score });
+    }
+  }, [score])
+
+  useEffect(() => {
+    window.scrollTo(20, 100);
+    let k = num;
+    if (foundEle.length < num) k = foundEle.length;
+    for (let i = 0; i < k; i++) {
+      let no = foundEle[i];
+      if (no == 1) { setClue1(false); }
+      else if (no == 2) { setClue2(false); }
+      else if (no == 3) { setClue3(false); }
+      else if (no == 4) { setClue4(false); }
+      else if (no == 5) { setClue5(false); }
+      else if (no == 6) { setClue6(false); }
+    }
+  }, []);
+
+  const handleClick = (no, e) => {
+    if (no == 0) { if (lives == 1) { setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 }); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
+    else if (no == 1) { setClue1(false); }
+    else if (no == 2) { setClue2(false); }
+    else if (no == 3) { setClue3(false); }
+    else if (no == 4) { setClue4(false); }
+    else if (no == 5) { setClue5(false); }
+    else if (no == 6) { setClue6(false); }
+    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num == 5) { if (unlock < 3) setUnlock(3); setWin(true); setFoundEle([]); setNum(0); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
+  }
+  const handleMsgClick = () => {
+    setK(1);
+    setTimer(20);
+    setMsg(false);
+  }
+
+  const componentsToRender = [];
+  for (let i = 0; i < lives; i++) {
+    componentsToRender.push(<img src={heart} key={i} alt="." />);
+  }
+  return (
+    <>
+      {show &&
+        <>
+          <div className="Theme2">
+            <img className="back" onClick={(e) => { handleClick(0, e) }} src="https://castleofchaos.com/wp-content/uploads/2017/05/asylums.jpg" alt="." />
+            {clue1 && <img className="injection" onClick={(e) => { handleClick(1, e) }} src={injection} alt="." />}
+            {clue2 && <img className="syrup" onClick={(e) => { handleClick(2, e) }} src={syrup} alt="." />}
+            {clue3 && <img className="medicines" onClick={(e) => { handleClick(3, e) }} src={medicines} alt="." />}
+            {clue4 && <img className="medical-kit" onClick={(e) => { handleClick(4, e) }} src={medicalKit} alt="." />}
+            {clue5 && <img className="scissor" onClick={(e) => { handleClick(5, e) }} src={scissor} alt="." />}
+            {clue6 && <img className="mask" onClick={(e) => { handleClick(6, e) }} src={mask} alt="." />}
+          </div>
+          <div className='box2'>
+            <div>{clue1 ? <span>1</span> : <img className="injection" src={injection} alt="." />}</div>
+            <div>{clue2 ? <span>2</span> : <img className="syrup" src={syrup} alt="." />}</div>
+            <div>{clue3 ? <span>3</span> : <img className="medicines" src={medicines} alt="." />}</div>
+            <div>{clue4 ? <span>4</span> : <img className="medical-kit" src={medicalKit} alt="." />}</div>
+            <div>{clue5 ? <span>5</span> : <img className="scissor" src={scissor} alt="." />}</div>
+            <div>{clue6 ? <span>6</span> : <img className="mask" src={mask} alt="." />}</div>
+          </div>
+          <div className='clue_box2'>
+            <div className='timer'><span className={cRed}>{timer}</span></div>
+            <div className='clues'>
+              <button>{clue1 && <span>Injection</span>}</button>
+              <button>{clue2 && <span>Energy Drink</span>}</button>
+              <button>{clue3 && <span>Medicine</span>}</button>
+              <button>{clue4 && <span>MediKit</span>}</button>
+              <button>{clue5 && <span>Scissor</span>}</button>
+              <button>{clue6 && <span>Oxygen-Mask</span>}</button>
+            </div>
+            <div className='score'>
+              <span>Score : </span>
+              <span>{score}</span>
+            </div>
+          </div>
+          <div className='lives'>
+            {componentsToRender}
+          </div>
+          {wrong && <WrongAlert setWrong={setWrong} />}
+          {win && <Win />}
+          {lose && (!win) && <Lose />}
+          {msg && <Message msg={message} handleMsgClick={handleMsgClick} win="Box2" />}
+        </>}
+    </>
+  )
+}
+
+export default Theme2

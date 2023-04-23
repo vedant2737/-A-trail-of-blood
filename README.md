@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Bloody Trail - Interactive Treasure Hunting Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bloody Trail is a treasure hunting game that consists of four levels that a user has to pass to get to the treasure. The game is designed to assess soft skills of its users such as attention to detail, perseverance, and curiosity. Each level is a dead-end, meaning if a user loses at any stage, they have to start from the beginning. The game is built using React, Firebase, and Sketchfab 3D models.
 
-## Available Scripts
+# Features
 
-In the project directory, you can run:
+- Register and login using email and password
+- User dashboard to track progress and score
+- Four levels with increasing difficulty
+- 3D models and hidden objects to find
+- Firebase authentication, database, and hosting
+- Ability to continue the game from where the user left off
+- WinPage after passing all four stages without losing
+- User analytics stored in Firebase database
+- User dashboard to track user progress and analytics
 
-### `npm start`
+# Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run the game, you need to have the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js and NPM installed on your system
+- A Firebase project with authentication and database enabled
 
-### `npm test`
+# Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clone the repository: git clone https://github.com/yourusername/bloody-trail.git
+- Navigate to the project directory: cd bloody-trail
+- Install dependencies: npm install
+- Start the development server: npm start
+- Open the game in your browser: http://localhost:3000
 
-### `npm run build`
+# Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once you have the game running, you can register and login using your email and password. The user dashboard shows your progress and score. To play the game, you have to pass all four levels without losing.Here each level is a dead-end , because if you lose at any stage, you have to start again from the first.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Soft Skills Assessed
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The game is designed to assess the following soft skills:
 
-### `npm run eject`
+- Attention to detail
+- Perseverance
+- Curiosity
+- Problem-solving
+- Decision making
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Credits
+The game uses the following resources:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React - https://reactjs.org/
+- Firebase - https://firebase.google.com/
+- Sketchfab - https://sketchfab.com/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Technologies Used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The game was built using React, and styling was done using SCSS. Firebase was used for authentication, database storage, and hosting. The 3D models used in the UI were obtained from Sketchfab.
 
-## Learn More
+# Gameplay
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The game has four levels, and players must successfully complete each level before they can progress to the next one. At each level, players are presented with an image containing hidden items. The names of the items are provided as hints, and players must find them to progress to the next level. If a player loses at any stage, they must start again from the first level.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Deployment
 
-### Code Splitting
+The game was deployed using Firebase hosting and is available online. The code for the game was also pushed to GitHub for version control.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Conclusion
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Bloody Trail is an exciting treasure hunting game built using React and Firebase. The game challenges players to find hidden items and progress through four levels to find the treasure. The game's features such as the user dashboard, leaderboard, and resumable gameplay make it engaging and enjoyable.

@@ -1,0 +1,1985 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  animation: pop-up 5s linear 1;
+
+  span {
+    font-size: 80px;
+    margin: 5px;
+    color: #1C1C1C;
+    font-family: "Chiller";
+
+    &:nth-child(1) {
+      animation: animate 1.5s forwards 5s;
+    }
+
+    &:nth-child(2) {
+      animation: animate 1.5s forwards 5.25s;
+    }
+
+    &:nth-child(3) {
+      animation: animate 1.5s forwards 5.5s;
+    }
+
+    &:nth-child(4) {
+      animation: animate 1.5s forwards 5.75s;
+    }
+
+    &:nth-child(5) {
+      animation: animate 1.5s forwards 6s;
+    }
+
+    &:nth-child(6) {
+      animation: animate 1.5s forwards 6.25s;
+    }
+
+    &:nth-child(7) {
+      animation: animate 1.5s forwards 6.5;
+    }
+
+    &:nth-child(8) {
+      animation: animate 1.5s forwards 6.75s;
+    }
+
+    &:nth-child(9) {
+      animation: animate 1.5s forwards 7s;
+    }
+
+    &:nth-child(10) {
+      animation: animate 1.5s forwards 7.25s;
+    }
+
+    &:nth-child(11) {
+      animation: animate 1.5s forwards 7.5s;
+    }
+
+    &:nth-child(12) {
+      animation: animate 1.5s forwards 7.75s;
+    }
+  }
+}
+
+@keyframes animate {
+  from {
+    color: #000000;
+  }
+
+  to {
+    color: #CB0000;
+    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .game {
+    margin-left: -20%;
+    height: 100%;
+    width: 140%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.feed {
+  position: fixed;
+
+  .container {
+    .game {
+      background-image: url('./img/feed-back.jpg');
+      background-size: 80% 100%;
+      background-position: 60% 0px;
+
+    }
+  }
+
+  .button {
+    font-size: 50px;
+    color: white;
+    position: fixed;
+    bottom: 15vh;
+    right: 8vw;
+    cursor: pointer;
+    padding: 1.5rem 2.5rem;
+    border-radius: 3.75rem;
+    line-height: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    // border: 1px solid #414343;
+    border: none;
+    background-image: linear-gradient(-180deg, #000000 0%, #CB0000 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(185, 84, 25, 0.5),
+      0 -0.25rem 1.5rem rgb(237, 92, 8) inset,
+      0 0.75rem 0.5rem rgba(235, 127, 127, 0.4) inset,
+      0 0.25rem 0.5rem 0 rgb(223, 81, 53) inset;
+
+    &:active {
+      box-shadow: 0px 0 5px 5px rgba(226, 19, 19, 0.2)
+    }
+
+    span {
+      color: transparent;
+      background-image: linear-gradient(0deg, #CB0000 0%, #FEFAFD 100%);
+      -webkit-background-clip: text;
+      // font-family: "Gruppo";
+      font-family: "Chiller";
+      background-clip: text;
+      letter-spacing: 8px;
+      font-size: 40px;
+      filter: drop-shadow(0 2px 2px rgb(218, 0, 0));
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      position: absolute;
+      top: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 7.5rem);
+      // background: #fff;
+      border-radius: 100%;
+
+      opacity: 0.7;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      position: absolute;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 7.5rem);
+      // background: #fff;
+      border-radius: 100%;
+      filter: blur(1px);
+      opacity: 0.05;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+  }
+}
+
+.Theme1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 150vw;
+  animation: show 5s 0s 1;
+
+  .back {
+    width: 150vw;
+    overflow: hidden;
+  }
+
+  .knife {
+    width: 6%;
+    position: absolute;
+    top: 70%;
+    left: 43.5%;
+    filter: brightness(60%);
+  }
+
+  .bible {
+    width: 5%;
+    position: absolute;
+    top: 85%;
+    left: 97%;
+    filter: brightness(50%);
+    transform: rotate(-20deg);
+  }
+
+  .keys {
+    width: 2%;
+    position: absolute;
+    top: 88%;
+    left: 23.5%;
+    transform: rotate(-5deg);
+    filter: brightness(40%);
+  }
+
+  .jesus {
+    width: 4%;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    opacity: 40%;
+  }
+
+  .om {
+    width: 4%;
+    position: absolute;
+    top: 26%;
+    right: -50%;
+    filter: brightness(40%);
+  }
+
+  .water {
+    width: 5%;
+    position: absolute;
+    top: 17%;
+    left: 53%;
+    filter: brightness(40%);
+  }
+}
+
+.box1 {
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 0.5vh;
+  left: calc(50% - 360px);
+  display: flex;
+
+  div {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back.jpg);
+
+    .keys {
+      width: 45%;
+    }
+
+    img {
+      width: 90%;
+    }
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(216, 191, 128);
+    }
+  }
+}
+
+.clue_box1 {
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+
+  .timer {
+    height: 100px;
+    width: 15%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back.jpg);
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(216, 191, 128);
+    }
+  }
+
+  .clues {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+
+    button {
+      margin: 4px;
+      width: 32%;
+      padding: 1%;
+      height: 43px;
+      border: none;
+      border-radius: 30px;
+      box-sizing: border-box;
+      opacity: 100%;
+      background-image: url(./img/back.jpg);
+      box-shadow: 1px 1px 2px 2px rgb(233, 193, 92, 0.5);
+
+      span {
+        color: rgb(216, 191, 128);
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 100%;
+      }
+    }
+  }
+
+  .score {
+    height: 100px;
+    width: 15%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back.jpg);
+    flex-direction: column;
+
+    span {
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(216, 191, 128);
+    }
+  }
+
+}
+
+.Theme2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  width: 120vw;
+  animation: show 5s 0s 1;
+
+  .back {
+    width: 150vw;
+  }
+
+  .injection {
+    position: absolute;
+    width: 6%;
+    left: 25%;
+    top: 63%;
+    transform: rotate(-37deg);
+    filter: brightness(65%);
+  }
+
+  .syrup {
+    width: 7%;
+    position: absolute;
+    filter: brightness(60%);
+    top: 13%;
+    left: 17%;
+  }
+
+  .medicines {
+    width: 7%;
+    position: absolute;
+    filter: brightness(30%);
+    top: 75%;
+    left: 84%;
+  }
+
+  .medical-kit {
+    width: 10%;
+    position: absolute;
+    filter: brightness(30%);
+    top: 79%;
+    left: 43%;
+    transform: rotate(-10deg);
+  }
+
+  .scissor {
+    width: 8%;
+    position: absolute;
+    filter: brightness(60%);
+    top: 70%;
+    right: -15%;
+    transform: rotate(35deg);
+  }
+
+  .mask {
+    width: 12%;
+    position: absolute;
+    filter: brightness(70%);
+    top: 46%;
+    right: -17%;
+  }
+}
+
+.box2 {
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 0.5vh;
+  left: calc(50% - 360px);
+  display: flex;
+
+  div {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back2.jpg);
+
+    img {
+      width: 100%;
+    }
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(186, 185, 185);
+    }
+  }
+}
+
+.clue_box2 {
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+
+  .timer {
+    height: 100px;
+    width: 15%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back2.jpg);
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(186, 185, 185);
+    }
+  }
+
+  .clues {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+
+    button {
+      margin: 4px;
+      width: 32%;
+      padding: 1%;
+      height: 43px;
+      border: none;
+      border-radius: 30px;
+      box-sizing: border-box;
+      opacity: 100%;
+      background-image: url(./img/back2.jpg);
+      box-shadow: 1px 1px 2px 2px rgb(186, 185, 185);
+
+      span {
+        color: rgb(186, 185, 185);
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 100%;
+      }
+    }
+  }
+
+  .score {
+    height: 100px;
+    width: 15%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back2.jpg);
+    flex-direction: column;
+
+    span {
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(186, 185, 185);
+    }
+  }
+
+}
+
+.Theme3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: 120vw;
+  animation: show 5s 0s 1;
+  margin-top: -100px;
+  animation: show 5s 0s 1;
+
+  .back {
+    width: 130vw;
+  }
+
+  .hammer {
+    position: absolute;
+    width: 6%;
+    left: 28%;
+    top: 70%;
+    transform: rotate(-98deg);
+    filter: brightness(55%);
+  }
+
+  .helmet {
+    width: 12%;
+    position: absolute;
+    filter: brightness(50%);
+    top: 18%;
+    right: -20%;
+  }
+
+  .saw {
+    width: 12%;
+    position: absolute;
+    filter: brightness(65%);
+    transform: rotate(-10deg);
+    top: 58%;
+    left: 50%;
+  }
+
+  .tool-box {
+    width: 13%;
+    position: absolute;
+    filter: brightness(30%);
+    bottom: 15%;
+    left: 0%;
+    transform: rotate(-10deg);
+  }
+
+  .blood-written {
+    width: 13%;
+    position: absolute;
+    opacity: 60%;
+    bottom: -10%;
+    top: 12%;
+    left: 32%;
+  }
+}
+
+.box3 {
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 0.5vh;
+  left: calc(50% - 240px);
+  display: flex;
+
+  div {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border: 8px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back31.jpg);
+    background-color: rgb(79, 3, 3);
+
+    img {
+      width: 95px;
+    }
+
+    .hammer {
+      width: 60px;
+      object-fit: cover;
+    }
+
+    .helmet {
+      height: 80px;
+      margin-right: -20px;
+      margin-top: -10px;
+      object-fit: cover;
+    }
+
+    .saw {
+      height: 35px;
+      object-fit: cover;
+    }
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(253, 244, 238);
+    }
+  }
+}
+
+.clue_box3 {
+  width: 100%;
+  height: 110px;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+
+  .timer {
+    height: 100px;
+    width: 12.5%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back31.jpg);
+
+    span {
+      font-size: 50px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(253, 244, 238);
+    }
+  }
+
+  .clues {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+
+    button {
+      width: 24%;
+      padding: 1%;
+      height: 43px;
+      border: none;
+      border-radius: 30px;
+      box-sizing: border-box;
+      opacity: 100%;
+      background-image: url(./img/back31.jpg);
+      box-shadow: 1px 1px 2px 2px black;
+
+      span {
+        color: rgb(253, 244, 238);
+        font-size: 20px;
+        font-weight: bold;
+        opacity: 100%;
+      }
+    }
+  }
+
+  .score {
+    height: 100px;
+    width: 12.5%;
+    padding: 10px;
+    margin: 5px;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back31.jpg);
+    flex-direction: column;
+
+    span {
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(253, 244, 238);
+    }
+  }
+}
+
+.Theme4 {
+  position: fixed;
+
+  .container {
+    .game {
+      position: fixed;
+      background-image: url('./img/treasure-back.jpg');
+      background-size: cover;
+      height: 106%;
+    }
+  }
+
+  .key-boxes {
+    width: 50%;
+    height: 200px;
+    display: flex;
+    position: absolute;
+    top: calc(50% - 100px);
+    left: 25%;
+
+    .img-container {
+      img {
+        height: 200px;
+        object-fit: cover;
+        margin: 0px 10px;
+      }
+
+      .box {
+        z-index: 12;
+      }
+
+      div {
+        background-image: url(./img/backlight.png);
+        background-size: 200px;
+        height: 200px;
+        width: 200px;
+        background-repeat: no-repeat;
+        position: relative;
+        top: -205px;
+        left: 0px;
+        animation: spin 1s linear infinite;
+
+        .key {
+          animation: spin1 1s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+.lives {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  display: flex;
+
+  img {
+    width: 40px;
+    margin: 10px 5px;
+  }
+}
+
+.Profile {
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 3s;
+
+  button {
+    font-family: "Chiller";
+    color: #CB0000;
+    position: relative;
+    right: 0.5vw;
+    top: 0.5vw;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: none;
+    padding: 0px;
+    border-top: 4px ridge #ffb000;
+    border-left: 4px groove #ffb000;
+    border-right: 4px ridge #ffb000;
+    border-bottom: 4px groove #ffb000;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+    }
+
+    &:active {
+      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .profile {
+    width: 40vw;
+    height: 100vh;
+    position: absolute;
+    padding-top: 4vh;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    animation: show1 0.5s linear 1;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .cross {
+      width: 40px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+
+      &:hover {
+        width: 38px;
+        top: 16px;
+        left: 16px;
+      }
+
+      &:active {
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .user-detail {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      animation: show2 0.5s linear 0s 1;
+
+      div {
+        width: 120px;
+        height: 120px;
+        animation: show2 0.5s linear 0s 1;
+        border-top: 4px ridge #ffb000;
+        border-left: 4px groove #ffb000;
+        border-right: 4px ridge #ffb000;
+        border-bottom: 4px groove #ffb000;
+        box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+
+        &:hover {
+          box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+        }
+
+        &:active {
+          box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .name {
+        font-size: 60px;
+        font-family: 'Chiller';
+        color: #CB0000;
+        margin: 0;
+      }
+
+      p {
+        color: rgb(253, 251, 225);
+        font-size: 28px;
+        font-family: "Gruppo";
+        margin: 5px;
+        font-weight: bold;
+        animation: show2 0.5s linear 0s 1;
+      }
+    }
+
+    .logout {
+      position: absolute;
+      top: 4vh;
+      right: 2vh;
+      border-radius: 20px;
+      border: none;
+      padding: 10px 20px !important;
+      width: 100px;
+      height: 6vh;
+      background-color: #cb0000;
+      color: rgb(253, 251, 225);
+      font-weight: bold;
+      letter-spacing: 2px;
+      font-size: 20px;
+      box-shadow: 0px 0px 5px red;
+      animation: show2 0.5s linear 1;
+    }
+
+    .leader-board {
+      border: 1px solid rgb(65, 64, 64);
+      width: 90%;
+      height: 100%;
+      margin: 5%;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      border-radius: 20px;
+      overflow: scroll;
+      gap: 10px;
+      animation: show2 0.5s linear 1;
+
+      h1 {
+        color: white;
+        margin: 0px;
+        margin: 8px;
+        font-family: "Chiller";
+        letter-spacing: 5px;
+        color: #e1d3d3;
+      }
+
+      .user {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 70px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border-top: 4px ridge #ffb000;
+            border-left: 4px groove #ffb000;
+            border-right: 4px ridge #ffb000;
+            border-bottom: 4px groove #ffb000;
+          }
+
+          p {
+            font-size: 40px;
+            margin: 0;
+            margin-left: 20px;
+            font-family: "Chiller";
+          }
+        }
+
+        padding: 0.5rem 2rem;
+        border-radius: 1rem;
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: 600;
+        border:3px solid rgb(84, 82, 82);
+
+        background: rgba(199, 113, 113,0.6);
+
+        span {
+          color: transparent;
+          background-image: linear-gradient(0deg, #f0e8e3 0%, #FEFAFD 100%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          font-family: "Chiller";
+          filter: drop-shadow(0 2px 2px rgb(102, 32, 0));
+        }
+      }
+
+    }
+
+    .leader-board::-webkit-scrollbar-thumb {
+      background-color: black;
+      border-radius: 10px;
+      height: 100px;
+      background-clip: content-box;
+      border: 1px solid transparent;
+    }
+
+    .leader-board::-webkit-scrollbar {
+      height: 100%;
+      width: 7px;
+    }
+
+    .leader-board::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  }
+}
+
+.Register {
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: all 3s;
+
+  button {
+    font-family: "Chiller";
+    color: #CB0000;
+    position: relative;
+    right: 0.5vw;
+    top: 0.5vw;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: none;
+    padding: 0px;
+    border-top: 4px ridge #ffb000;
+    border-left: 4px groove #ffb000;
+    border-right: 4px ridge #ffb000;
+    border-bottom: 4px groove #ffb000;
+    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+    }
+
+    &:active {
+      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .top {
+    height: 40% !important;
+  }
+
+  .register {
+    width: 30vw;
+    height: 86vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    animation: show3 0.5s linear 1;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10vh 0px;
+    align-items: center;
+
+    .cross {
+      width: 40px;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      cursor: pointer;
+
+      &:hover {
+        width: 38px;
+        top: 16px;
+        left: 16px;
+      }
+
+      &:active {
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    p {
+      color: white;
+      animation: show2 0.5s linear 1;
+
+      span {
+        color: #cb0000;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: #757373;
+        }
+      }
+    }
+
+    .p {
+      font-size: 50px;
+      color: #cb0000;
+      font-family: "Chiller";
+      margin: 0;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      height: 100%;
+      width: 100%;
+      animation: show2 0.5s linear 0s 1;
+
+      input {
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid black;
+        width: 60%;
+        background-color: rgb(48, 48, 48);
+        color: white;
+
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+
+      label {
+        align-items: center;
+        gap: 20px;
+        color: rgb(175, 175, 175);
+        display: flex;
+        cursor: pointer;
+
+        img {
+          width: 100px;
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 20px;
+          color: rgb(48, 48, 48);
+        }
+      }
+
+      #gender {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        margin-left: -14%;
+
+        label {
+          margin-left: -15%;
+        }
+      }
+
+      button {
+        background-color: #cb0000;
+        color: white;
+        border: none;
+        border-radius: 0;
+        width: 40%;
+        height: 8vh;
+        padding: 10px;
+        font-weight: bold;
+        letter-spacing: 5px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      span {
+        color: #cb0000;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.Stages {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+
+  .container {
+    .game {
+      margin-top: -13%;
+      margin-left: -40%;
+      width: 180%;
+      height: 150%;
+      background-image: url('./img/stages-back1.jpg');
+      background-size: cover;
+      filter: brightness(60%);
+    }
+  }
+
+  .stages {
+    position: absolute;
+    top: 27%;
+    left: 9%;
+    display: flex;
+
+    .border {
+      border-top: 4px ridge #ffb000;
+      border-left: 4px groove #ffb000;
+      border-right: 4px ridge #ffb000;
+      border-bottom: 4px groove #ffb000;
+      box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+
+      &:hover {
+        box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      }
+
+      &:active {
+        box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      }
+
+      margin:1%;
+      width:20vw;
+      height:18vw;
+      border-radius:20px;
+
+      div {
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      .lock {
+        position: absolute;
+        top: 28%;
+        left: 30%;
+        width: 100px;
+        object-fit: cover;
+        height: 100px;
+        filter: brightness(200%);
+      }
+    }
+
+    .dark {
+      filter: brightness(30%);
+    }
+
+    .theme1 {
+      background-image: url('https://i.pinimg.com/originals/ab/20/47/ab20472dd2864bcf048200c098e739c9.jpg') !important;
+      background-size: cover;
+
+    }
+
+    .theme2 {
+      background-image: url('https://castleofchaos.com/wp-content/uploads/2017/05/asylums.jpg') !important;
+      background-size: cover;
+    }
+
+    .theme3 {
+      background-image: url('https://www.androidauthority.com/wp-content/uploads/2022/02/The-Room-Old-Sins-best-puzzle-games-android.jpg') !important;
+      background-size: cover;
+    }
+
+    .theme4 {
+      background-image: url('./img/theme4.png') !important;
+      background-size: cover;
+    }
+
+    .start {
+      position: absolute;
+      top: 103%;
+      left: 41.5%;
+      cursor: pointer;
+      padding: 1.5rem 2.5rem;
+      border-radius: 3.75rem;
+      line-height: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      border: 1px solid #414343;
+      background-image: linear-gradient(-180deg, #000000 0%, #CB0000 100%);
+      box-shadow: 0 1rem 1.25rem 0 rgba(185, 84, 25, 0.5),
+        0 -0.25rem 1.5rem rgb(237, 92, 8) inset,
+        0 0.75rem 0.5rem rgba(235, 127, 127, 0.4) inset,
+        0 0.25rem 0.5rem 0 rgb(223, 81, 53) inset;
+
+      &:hover {
+        padding: 1.7rem 2.7rem;
+        left: 41.1%;
+        top: 102%;
+      }
+
+      &:active {
+        box-shadow: 0px 0 5px 5px rgba(226, 19, 19, 0.2)
+      }
+
+      span {
+        color: transparent;
+        background-image: linear-gradient(0deg, #CB0000 0%, #FEFAFD 100%);
+        -webkit-background-clip: text;
+        font-family: "Chiller";
+        background-clip: text;
+        letter-spacing: 8px;
+        font-size: 40px;
+        filter: drop-shadow(0 2px 2px rgb(218, 0, 0));
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        height: 0.25rem;
+        position: absolute;
+        top: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 7.5rem);
+        // background: #fff;
+        border-radius: 100%;
+
+        opacity: 0.7;
+        background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 0.25rem;
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 7.5rem);
+        // background: #fff;
+        border-radius: 100%;
+        filter: blur(1px);
+        opacity: 0.05;
+        background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+      }
+    }
+  }
+}
+
+.instructions {
+  img {
+    position: fixed;
+    width: 10%;
+    top: 2vh;
+    left: 1vw;
+    filter: brightness(70%);
+  }
+
+  .msg {
+    animation: pop-up2 1s linear 1 !important;
+    background-image: url("./img/treasure-back.jpg") !important;
+    border-top: 8px ridge #ffb000;
+    border-left: 8px groove #ffb000;
+    border-right: 8px ridge #ffb000;
+    border-bottom: 8px groove #ffb000;
+    filter: brightness(100%) !important;
+
+    p {
+      margin-top: 0%;
+      color: #cb0000;
+    }
+
+    .p {
+      margin-top: -3%;
+      color: #cb0000 !important;
+    }
+
+    button {
+      color: white;
+      background: #640e0e;
+      border-top: 2px solid #df9d9d;
+      border-left: 2px solid #daa3a3;
+      border-right: 2px solid #cb0000;
+      border-bottom: 2px solid #cb0000;
+
+      &:active {
+        box-shadow: 0px 0 3px 3px rgba(27, 26, 26, 0.2);
+        border-right: 2px solid #df9d9d;
+        border-bottom: 2px solid #daa3a3;
+        border-top: 2px solid #cb0000;
+        border-left: 2px solid #cb0000;
+      }
+
+      &:hover {
+        color: #efdbdb;
+        box-shadow: 0px 0 3px 3px rgba(27, 26, 26, 0.2);
+      }
+    }
+  }
+}
+
+.Alert {
+  position: absolute;
+  background: rgb(203, 0, 0, 0.4);
+  opacity: 40%;
+  filter: blur(70px);
+  backdrop-filter: blur(0.0002px);
+  top: 0;
+  transition: all 1s;
+}
+
+.lose-box {
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  width: 40vw;
+  height: 60vh;
+  background: linear-gradient(#898484, #423939, #484848, #615d5c);
+  border-radius: 20px;
+  border-top: 6px ridge rgb(130, 127, 127);
+  border-left: 6px groove rgb(130, 127, 127);
+  border-right: 6px ridge rgb(130, 127, 127);
+  border-bottom: 6px groove rgb(130, 127, 127);
+  box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: pop-show 1s linear;
+
+  .border-img {
+    position: absolute;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+    filter: grayscale(80%);
+  }
+
+  .lose {
+    font-size: 100px;
+    color: #360d0d;
+    font-family: "Chiller";
+    margin: 0;
+    margin-top: -5%;
+    margin-bottom: 0%;
+    text-shadow: 0px 15px 7px black;
+  }
+
+  .score {
+    font-size: 35px;
+    font-family: "Gruppo";
+    font-weight: bold;
+    margin: 0px;
+    color: rgb(213, 213, 213);
+    margin-bottom: 10px;
+  }
+
+  button {
+    padding: 7px 30px;
+    min-width: 60px;
+    background: rgb(65, 48, 48);
+    // background: transparent;
+    color: rgb(197, 196, 196);
+    font-size: 30px;
+    margin-top: 20px;
+    font-family: "Chiller";
+    z-index: 10;
+
+    &:hover {
+      box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+    }
+
+    &:active {
+      box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+      color: grey;
+    }
+  }
+}
+
+.Win {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 40%;
+  filter: blur(100%);
+  top: 0;
+}
+
+.border {
+  border-top: 6px ridge #ffb000 !important;
+  border-left: 6px groove #ffb000 !important;
+  border-right: 6px ridge #ffb000 !important;
+  border-bottom: 6px groove #ffb000 !important;
+  background-image: url(./img/treasure-back.jpg) !important;
+}
+
+.win-box {
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  width: 40vw;
+  height: 60vh;
+  background-image: url(./img/win-back.jpeg);
+  background-size: 100% 100%;
+  border-top: 6px ridge black;
+  border-left: 6px groove black;
+  border-right: 6px ridge grey;
+  border-bottom: 6px groove grey;
+  box-shadow: inset 0px 0px 5px 3px rgba(121, 120, 120, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 30px;
+  animation: pop-show 1s linear;
+  box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  box-sizing: border-box;
+
+  .key-back {
+    background-image: url(./img/backlight.png);
+    background-size: 300px;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 0px;
+    animation: spin 1s linear infinite;
+
+    .key {
+      animation: spin1 1s linear infinite;
+      width: 95%;
+    }
+  }
+
+  .container {
+    .game {
+      margin-left: -26%;
+      width: 150%;
+      z-index: -1;
+    }
+  }
+
+  .border-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .win {
+    font-size: 100px;
+    text-shadow: 0px 0px 10px black,
+      0px 0px 20px black,
+      0px 0px 30px black,
+      0px 0px 40px black,
+      0px 0px 50px black;
+    color: #fff;
+    font-family: "Chiller";
+    margin: 0;
+  }
+
+  .level {
+    font-size: 40px;
+    font-family: "Chiller";
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    text-shadow: 0px 0px 10px #cb0000;
+    letter-spacing: 2px;
+  }
+
+  .score {
+    font-size: 35px;
+    font-family: "Gruppo";
+    font-weight: 800;
+    margin: 0;
+    color: rgb(249, 208, 208);
+    text-shadow: 0px 10px 5px black;
+  }
+
+  .theme4 {
+    margin-top: -10px !important;
+    width: 90% !important;
+
+    .button {
+      cursor: pointer;
+      position: relative;
+      padding: 1rem 3rem;
+      border-radius: 3.75rem;
+      line-height: 2.5rem;
+      font-size: 2rem;
+      font-weight: 600;
+      border: 1px solid #cb0000;
+      background-image: linear-gradient(-180deg, #cb0000 0%, #9b0808 100%);
+      box-shadow: 0 1rem 1.25rem 0 rgba(122, 7, 5, 0.5),
+        0 -0.25rem 1.5rem rgb(145, 22, 3) inset,
+        0 0.75rem 0.5rem rgba(114, 47, 47, 0.4) inset,
+        0 0.25rem 0.5rem 0 rgb(144, 31, 5) inset;
+
+      span {
+        color: transparent;
+        background-image: linear-gradient(0deg, #EE82DA 0%, #FEFAFD 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        height: 0.25rem;
+        position: absolute;
+        top: 0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 7.5rem);
+        background: #fff;
+        border-radius: 100%;
+        opacity: 0.7;
+        background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 0.25rem;
+        position: absolute;
+        bottom: 0.75rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 7.5rem);
+        background: #fff;
+        border-radius: 100%;
+
+        filter: blur(1px);
+        opacity: 0.05;
+        background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin-top: 10%;
+
+    button {
+      padding: 7px 25px;
+      min-width: 120px;
+      color: white;
+      font-size: 30px;
+      text-shadow: 0px 0px 10px red, ;
+      font-family: "Chiller";
+      z-index: 10;
+      background-image: url(./img/win-back.jpeg);
+      background-size: 300% 300%;
+
+      &:hover {
+        box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+      }
+
+      &:active {
+        box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+        color: rgb(240, 205, 205);
+      }
+    }
+  }
+}
+
+.c-red {
+  color: #CB0000 !important;
+}
+
+.Score {
+  position: fixed;
+  top: 1vh;
+  right: 7vw;
+  width: fit-content;
+  height: fit-content;
+  min-width: 130px;
+  padding: 1px 10px;
+  border-radius: 10px;
+  background-image: url(./img/treasure-back.jpg);
+  border-top: 4px ridge #ffb000 !important;
+  border-left: 4px groove #ffb000 !important;
+  border-right: 4px ridge #ffb000 !important;
+  border-bottom: 4px groove #ffb000 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    font-family: "Chiller";
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 2px;
+    color: white;
+  }
+}
+
+.letter {
+  position: absolute;
+  width: 70vw;
+  height: 62vh;
+  top: 10vh;
+  left: 15vw;
+  box-sizing: border-box;
+  padding: 4vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('./img/treasure-back.jpg');
+  animation: pop-up 10s linear 1;
+  border-radius: 25px;
+  border-top: 8px ridge #ffb000;
+  border-left: 8px groove #ffb000;
+  border-right: 8px ridge #ffb000;
+  border-bottom: 8px groove #ffb000;
+  overflow: hidden;
+
+  p {
+    font-family: "Chiller";
+    font-size: 2.4vw;
+    color: rgb(197, 8, 8);
+  }
+}
+
+.WinPage {
+  .container {
+    .game {
+      background-image: url('./img/treasure-back.jpg') !important;
+      background-size: cover;
+      height: 130%;
+    }
+  }
+
+  .button {
+    cursor: pointer;
+    position: absolute;
+    left: 26vw;
+    height: 12vh;
+    bottom: 10vh;
+    width: 48vw;
+    padding: 1rem 3rem;
+    border-radius: 3.75rem;
+    line-height: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    box-sizing: border-box;
+    animation: pop-up 10s linear 1;
+    border: 1px solid #cb0000;
+    background-image: linear-gradient(-180deg, #a70606 0%, #640e0e 100%);
+    box-shadow: 0 1rem 1.25rem 0 rgba(93, 6, 5, 0.5),
+      0 -0.25rem 1.5rem rgb(145, 22, 3) inset,
+      0 0.75rem 0.5rem rgba(114, 47, 47, 0.4) inset,
+      0 0.25rem 0.5rem 0 rgb(144, 31, 5) inset;
+
+    span {
+      color: transparent;
+      background-image: linear-gradient(0deg, #efe5e5 0%, #dedad9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      position: absolute;
+      top: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 7.5rem);
+      background: #fff;
+      border-radius: 100%;
+      opacity: 0.7;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      position: absolute;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 7.5rem);
+      background: #fff;
+      border-radius: 100%;
+
+      filter: blur(1px);
+      opacity: 0.05;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+  }
+}
+
+.msg {
+  background-image: url('./img/win-back.jpeg');
+  filter: brightness(85%);
+  border-top: 8px ridge rgb(250, 247, 247);
+  border-left: 8px groove rgb(250, 247, 247);
+  border-right: 8px ridge rgb(250, 247, 247);
+  border-bottom: 8px groove rgb(250, 247, 247);
+  animation: pop-up2 2s linear 1 !important;
+
+  p {
+    margin-top: 0%;
+    color: white;
+  }
+
+  .p {
+    margin-top: -3%;
+    color: white !important;
+  }
+
+  button {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    padding: 1% 4%;
+    font-size: 20px;
+    font-family: "Gruppo";
+    font-weight: bold;
+    letter-spacing: 4px;
+    background: transparent;
+    color: white;
+    text-shadow: 0px 5px 10px black;
+
+    &:active {
+      color: grey;
+    }
+  }
+}
+
+.Box1 {
+  height: 144vh !important;
+  width: 120vw !important;
+}
+
+.Box2 {
+  height: 135vh !important;
+  width: 125vw !important;
+}
+
+.Box3 {
+  height: 140vh !important;
+  width: 130vw !important;
+}
+
+.Box4 {
+  height: 102.5vh !important;
+  width: 100vw !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes show1 {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 40vw;
+    ;
+  }
+}
+
+@keyframes show2 {
+  0% {
+    transform: translateX(20vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes show3 {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30vw;
+  }
+}
+
+@keyframes pop-show {
+  0% {
+    transform: translateX(20vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    opacity: 0%;
+  }
+
+  80% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes pop-up2 {
+  0% {
+    opacity: 0%;
+  }
+
+  30% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
