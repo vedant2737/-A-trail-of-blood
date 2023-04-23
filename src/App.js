@@ -41,7 +41,7 @@ function App() {
   }, []);
 
   if (isSmallScreen) {
-    return <h2>Sorry, This website is not responsive,Please open it in desktop for best experience.</h2>;
+    return <h2>Sorry, This website is not responsive, tihs is a desktop based game ,Please open it in desktop for best experience.</h2>;
   }
   return (
     <>  
