@@ -1079,6 +1079,7 @@ body {
     top: 27vh;
     left: 9vw;
     display: flex;
+    justify-content: space-between;
 
     .border {
       border-top: 1vh ridge #ffb000;
@@ -1097,7 +1098,7 @@ body {
 
       margin:1%;
       width:20vw;
-      height:18vw;
+      height:38vh;
       border-radius:3vh;
 
       div {

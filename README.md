@@ -13,6 +13,7 @@ Bloody Trail is a treasure hunting game that consists of four levels that a user
 - WinPage after passing all four stages without losing
 - User analytics stored in Firebase database
 - User dashboard to track user progress and analytics
+- Responsive design that can run on any device
 
 # Requirements
 
@@ -31,7 +32,7 @@ To run the game, you need to have the following:
 
 # Usage
 
-Once you have the game running, you can register and login using your email and password. The user dashboard shows your progress and score. To play the game, you have to pass all four levels without losing.Here each level is a dead-end , because if you lose at any stage, you have to start again from the first.
+Once you have the game running, you can register and login using your email and password. The user dashboard shows your progress and score. To play the game, you have to pass all four levels without losing.Here each level is a dead-end , because if you lose at any stage, you have to start again from the beginning (first level).
 
 # Soft Skills Assessed
 
@@ -64,4 +65,4 @@ The game was deployed using Firebase hosting and is available online. The code f
 
 # Conclusion
 
-Bloody Trail is an exciting treasure hunting game built using React and Firebase. The game challenges players to find hidden items and progress through four levels to find the treasure. The game's features such as the user dashboard, leaderboard, and resumable gameplay make it engaging and enjoyable.
+Bloody Trail is an exciting treasure hunting game built using React and Firebase. The game challenges players to find hidden items and progress through four levels to find the treasure. The game's features such as the user dashboard, leaderboard, and resumable gameplay make it engaging and enjoyable. The game is also responsive and can run on any type of device.
