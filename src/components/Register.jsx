@@ -19,7 +19,6 @@ const Register = ({ popup = false, handleClick1 }) => {
     const [err, setErr] = useState("");
     const [pic, setPic] = useState("");
     const [login, setLogin] = useState(false);
-    // const navigate = useNavigate();
 
     const handleClick = () => {
         setShow(!show)

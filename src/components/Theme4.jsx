@@ -155,7 +155,8 @@ const Theme4 = () => {
               <img className="box" onClick={() => { handleClick(0) }} src={keyBox} alt="."/>
               {key0 && <div>
                 <img className="key" src={key} alt="."/>
-              </div>}
+              </div>
+              }
             </div>
             <div className="img-container">
               <img className="box" onClick={() => { handleClick(1) }} src={keyBox} alt="."/>

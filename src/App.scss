@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Chiller';
+  src: url('./assests/CHILLER.TTF') format('truetype');
+}
+
 body {
   height: 100vh;
   width: 100vw;
@@ -10,8 +15,8 @@ body {
   animation: pop-up 5s linear 1;
 
   span {
-    font-size: 80px;
-    margin: 5px;
+    font-size: 12vh;
+    margin: 0.8vh;
     color: #1C1C1C;
     font-family: "Chiller";
 
@@ -72,7 +77,7 @@ body {
 
   to {
     color: #CB0000;
-    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff;
+    text-shadow: 0 0 0.8vh #ffffff, 0 0 0.8vh #ffffff;
   }
 }
 
@@ -102,32 +107,33 @@ body {
       background-image: url('./img/feed-back.jpg');
       background-size: 80% 100%;
       background-position: 60% 0px;
-
+      height:102vh;
+      margin-top:-2vh;
     }
   }
 
   .button {
-    font-size: 50px;
+    font-size: 8vh;
     color: white;
     position: fixed;
     bottom: 15vh;
-    right: 8vw;
+    right: 7vw;
     cursor: pointer;
-    padding: 1.5rem 2.5rem;
-    border-radius: 3.75rem;
-    line-height: 2rem;
-    font-size: 2rem;
+    padding: 3vh 6vh;
+    border-radius: 8vh;
+    line-height: 5vh;
+    font-size: 5vh;
     font-weight: bold;
     // border: 1px solid #414343;
     border: none;
     background-image: linear-gradient(-180deg, #000000 0%, #CB0000 100%);
-    box-shadow: 0 1rem 1.25rem 0 rgba(185, 84, 25, 0.5),
-      0 -0.25rem 1.5rem rgb(237, 92, 8) inset,
-      0 0.75rem 0.5rem rgba(235, 127, 127, 0.4) inset,
-      0 0.25rem 0.5rem 0 rgb(223, 81, 53) inset;
+    box-shadow: 0 3vh 3vh 0 rgba(185, 84, 25, 0.5),
+      0 -0.5vh 3vh rgb(237, 92, 8) inset,
+      0 2vh 1vh rgba(235, 127, 127, 0.4) inset,
+      0 0.5vh 1vh 0 rgb(223, 81, 53) inset;
 
     &:active {
-      box-shadow: 0px 0 5px 5px rgba(226, 19, 19, 0.2)
+      box-shadow: 0px 0 0.8vh 0.8vh rgba(226, 19, 19, 0.2)
     }
 
     span {
@@ -137,23 +143,22 @@ body {
       // font-family: "Gruppo";
       font-family: "Chiller";
       background-clip: text;
-      letter-spacing: 8px;
-      font-size: 40px;
-      filter: drop-shadow(0 2px 2px rgb(218, 0, 0));
+      letter-spacing: 1.5vh;
+      font-size: 6vh;
+      filter: drop-shadow(0 0.6vh 0.6vh rgb(218, 0, 0));
     }
 
     &::before {
       content: "";
       display: block;
-      height: 0.25rem;
+      height: 0.5vh;
       position: absolute;
-      top: 0.5rem;
+      top: 1.5vh;
       left: 50%;
       transform: translateX(-50%);
-      width: calc(100% - 7.5rem);
+      width: calc(100% - 17vh);
       // background: #fff;
       border-radius: 100%;
-
       opacity: 0.7;
       background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
     }
@@ -161,12 +166,12 @@ body {
     &::after {
       content: "";
       display: block;
-      height: 0.25rem;
+      height: 0.5vh;
       position: absolute;
-      bottom: 0.75rem;
+      bottom: 1.5vh;
       left: 50%;
       transform: translateX(-50%);
-      width: calc(100% - 7.5rem);
+      width: calc(100% - 17vh);
       // background: #fff;
       border-radius: 100%;
       filter: blur(1px);
@@ -176,445 +181,308 @@ body {
   }
 }
 
-.Theme1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.Theme3 {
   height: 100vh;
-  width: 150vw;
+  width: 100vw;
   animation: show 5s 0s 1;
 
   .back {
-    width: 150vw;
+    width: 135vw;
+    height: 162vh;
+    margin-top: -27vh;
     overflow: hidden;
+    background-image: url('https://www.androidauthority.com/wp-content/uploads/2022/02/The-Room-Old-Sins-best-puzzle-games-android.jpg');
+    background-size: 100% 100%;
   }
 
-  .knife {
-    width: 6%;
-    position: absolute;
-    top: 70%;
-    left: 43.5%;
-    filter: brightness(60%);
-  }
+  .clue-back {
+    .knife {
+      position: absolute;
+      width: 7vw;
+      height: 7vh;
+      left: 37vw;
+      top: 70vh;
+      filter: brightness(50%);
+    }
 
-  .bible {
-    width: 5%;
-    position: absolute;
-    top: 85%;
-    left: 97%;
-    filter: brightness(50%);
-    transform: rotate(-20deg);
-  }
-
-  .keys {
-    width: 2%;
-    position: absolute;
-    top: 88%;
-    left: 23.5%;
-    transform: rotate(-5deg);
-    filter: brightness(40%);
-  }
-
-  .jesus {
-    width: 4%;
-    position: absolute;
-    top: 40%;
-    left: 80%;
-    opacity: 40%;
-  }
-
-  .om {
-    width: 4%;
-    position: absolute;
-    top: 26%;
-    right: -50%;
-    filter: brightness(40%);
-  }
-
-  .water {
-    width: 5%;
-    position: absolute;
-    top: 17%;
-    left: 53%;
-    filter: brightness(40%);
-  }
-}
-
-.box1 {
-  height: fit-content;
-  width: fit-content;
-  position: fixed;
-  top: 0.5vh;
-  left: calc(50% - 360px);
-  display: flex;
-
-  div {
-    height: 100px;
-    width: 100px;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back.jpg);
+    .bible {
+      position: absolute;
+      width: 5.5vw;
+      height: 8vh;
+      left: 93vw;
+      top: 84vh;
+      filter: brightness(50%);
+      transform: rotate(-15deg);
+    }
 
     .keys {
-      width: 45%;
+      position: absolute;
+      width: 1.8vw;
+      height:9vh;
+      left: 21vw;
+      top: 108vh;
+      filter: brightness(45%);
+      transform: rotate(-5deg);
     }
 
-    img {
-      width: 90%;
+    .jesus {
+      position: absolute;
+      height:10.5vh;
+      width: 4vw;
+      left: 71vw;
+      top: 43vh;
+      filter: brightness(90%);
+      opacity: 60%;
     }
 
-    span {
-      font-size: 50px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(216, 191, 128);
-    }
-  }
-}
-
-.clue_box1 {
-  width: 100%;
-  height: 110px;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-
-  .timer {
-    height: 100px;
-    width: 15%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back.jpg);
-
-    span {
-      font-size: 50px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(216, 191, 128);
-    }
-  }
-
-  .clues {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-
-    button {
-      margin: 4px;
-      width: 32%;
-      padding: 1%;
-      height: 43px;
-      border: none;
-      border-radius: 30px;
-      box-sizing: border-box;
-      opacity: 100%;
-      background-image: url(./img/back.jpg);
-      box-shadow: 1px 1px 2px 2px rgb(233, 193, 92, 0.5);
-
-      span {
-        color: rgb(216, 191, 128);
-        font-size: 20px;
-        font-weight: bold;
-        opacity: 100%;
-      }
-    }
-  }
-
-  .score {
-    height: 100px;
-    width: 15%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back.jpg);
-    flex-direction: column;
-
-    span {
-      font-size: 30px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(216, 191, 128);
-    }
-  }
-
-}
-
-.Theme2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120vh;
-  width: 120vw;
-  animation: show 5s 0s 1;
-
-  .back {
-    width: 150vw;
-  }
-
-  .injection {
-    position: absolute;
-    width: 6%;
-    left: 25%;
-    top: 63%;
-    transform: rotate(-37deg);
-    filter: brightness(65%);
-  }
-
-  .syrup {
-    width: 7%;
-    position: absolute;
-    filter: brightness(60%);
-    top: 13%;
-    left: 17%;
-  }
-
-  .medicines {
-    width: 7%;
-    position: absolute;
-    filter: brightness(30%);
-    top: 75%;
-    left: 84%;
-  }
-
-  .medical-kit {
-    width: 10%;
-    position: absolute;
-    filter: brightness(30%);
-    top: 79%;
-    left: 43%;
-    transform: rotate(-10deg);
-  }
-
-  .scissor {
-    width: 8%;
-    position: absolute;
-    filter: brightness(60%);
-    top: 70%;
-    right: -15%;
-    transform: rotate(35deg);
-  }
-
-  .mask {
-    width: 12%;
-    position: absolute;
-    filter: brightness(70%);
-    top: 46%;
-    right: -17%;
-  }
-}
-
-.box2 {
-  height: fit-content;
-  width: fit-content;
-  position: fixed;
-  top: 0.5vh;
-  left: calc(50% - 360px);
-  display: flex;
-
-  div {
-    height: 100px;
-    width: 100px;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back2.jpg);
-
-    img {
-      width: 100%;
+    .om {
+      position: absolute;
+      width: 5vw;
+      height:10vh;
+      right: -34vw;
+      top: 33vh;
+      filter: brightness(45%);
     }
 
-    span {
-      font-size: 50px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(186, 185, 185);
+    .water {
+      position: absolute;
+      width: 5vw;
+      height:9vh;
+      left: 46.5vw;
+      top: 24.5vh;
+      filter: brightness(45%);
     }
-  }
-}
-
-.clue_box2 {
-  width: 100%;
-  height: 110px;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-
-  .timer {
-    height: 100px;
-    width: 15%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back2.jpg);
-
-    span {
-      font-size: 50px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(186, 185, 185);
-    }
-  }
-
-  .clues {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 70%;
-
-    button {
-      margin: 4px;
-      width: 32%;
-      padding: 1%;
-      height: 43px;
-      border: none;
-      border-radius: 30px;
-      box-sizing: border-box;
-      opacity: 100%;
-      background-image: url(./img/back2.jpg);
-      box-shadow: 1px 1px 2px 2px rgb(186, 185, 185);
-
-      span {
-        color: rgb(186, 185, 185);
-        font-size: 20px;
-        font-weight: bold;
-        opacity: 100%;
-      }
-    }
-  }
-
-  .score {
-    height: 100px;
-    width: 15%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back2.jpg);
-    flex-direction: column;
-
-    span {
-      font-size: 30px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(186, 185, 185);
-    }
-  }
-
-}
-
-.Theme3 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: fit-content;
-  width: 120vw;
-  animation: show 5s 0s 1;
-  margin-top: -100px;
-  animation: show 5s 0s 1;
-
-  .back {
-    width: 130vw;
-  }
-
-  .hammer {
-    position: absolute;
-    width: 6%;
-    left: 28%;
-    top: 70%;
-    transform: rotate(-98deg);
-    filter: brightness(55%);
-  }
-
-  .helmet {
-    width: 12%;
-    position: absolute;
-    filter: brightness(50%);
-    top: 18%;
-    right: -20%;
-  }
-
-  .saw {
-    width: 12%;
-    position: absolute;
-    filter: brightness(65%);
-    transform: rotate(-10deg);
-    top: 58%;
-    left: 50%;
-  }
-
-  .tool-box {
-    width: 13%;
-    position: absolute;
-    filter: brightness(30%);
-    bottom: 15%;
-    left: 0%;
-    transform: rotate(-10deg);
-  }
-
-  .blood-written {
-    width: 13%;
-    position: absolute;
-    opacity: 60%;
-    bottom: -10%;
-    top: 12%;
-    left: 32%;
   }
 }
 
 .box3 {
+  left: calc(50% - 50vh) !important;
+  div{
+    border: 1.2vh solid black !important;  
+    background-image: url(./img/back.jpg) !important;
+    .keys {
+      width: 50% !important;
+    }
+    img {
+      width: 90% !important;
+    }
+    span {
+      color: rgb(216, 191, 128) !important;
+    }
+  }
+}
+
+.Theme2 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -26vh;
+  animation: show 5s 0s 1;
+
+  .back {
+    background-image: url('https://castleofchaos.com/wp-content/uploads/2017/05/asylums.jpg');
+    background-size: 100% 100%;
+    width: 120vw;
+    height: 160vh;
+  }
+
+  .clue-back {
+    .injection {
+      position: absolute;
+      width: 7vw;
+      height: 9vh;
+      left: 45vw;
+      top: 53vh;
+      filter: brightness(75%);
+      transform: rotate(-30deg);
+    }
+
+    .syrup {
+      position: absolute;
+      width: 7.5vw;
+      height: 16vh;
+      left: 18vw;
+      top: 3vh;
+      filter: brightness(60%);
+    }
+
+    .medicines {
+      position: absolute;
+      width: 7vw;
+      height: 10vh;
+      left: 83vw;
+      top: 66vh;
+      filter: brightness(30%);
+    }
+
+    .medical-kit {
+      position: absolute;
+      width: 10vw;
+      height: 16vh;
+      left: 1vw;
+      top: 48vh;
+      filter: brightness(15%);
+      transform: rotate(-10deg);
+    }
+
+    .scissor {
+      position: absolute;
+      width: 10vw;
+      height: 22vh;
+      right: -15vw;
+      top: 68vh;
+      filter: brightness(60%);
+      transform: rotate(35deg);
+    }
+
+    .mask {
+      position: absolute;
+      width: 10vw;
+      height: 21vh;
+      right: -10vw;
+      top: 42vh;
+      filter: brightness(70%);
+    }
+  }
+}
+
+.box2 {
+  left: calc(50% - 53vh) !important;
+
+  div {
+    background-image: url(./img/back2.jpg) !important;
+
+    img {
+      width: 100% !important;
+    }
+    span{
+      color: rgb(158, 157, 157) !important;
+    }
+  }
+}
+
+.clue-box2 {
+  height: 16.5vh !important;
+
+  .timer {
+    height: 15vh !important;
+    width: 15% !important;
+    background-image: url(./img/back2.jpg) !important;
+    span {
+      color: rgb(186, 185, 185) !important;
+    }
+  }
+  .timer3{
+    background-image: url(./img/back.jpg) !important;
+    span {
+      color: rgb(216, 191, 128) !important;
+    }
+  }
+
+  .clues {
+    width: 70% !important;
+    height: 15vh !important;
+
+    button {
+      margin: 0.5vh !important;
+      width: 32% !important;
+      opacity: 100% !important;
+      background-image: url(./img/back2.jpg) !important;
+      box-shadow: none !important;
+      border:0.5vh solid rgb(186, 185, 185) !important;
+
+      span {
+        color: rgb(186, 185, 185) !important;
+      }
+    }
+  }
+  .clues3{
+    button{
+      background-image: url(./img/back.jpg) !important;
+      border:0.5vh solid rgb(216, 191, 128) !important;
+      span {
+        color: rgb(216, 191, 128) !important;
+      }
+    }
+  }
+}
+
+.Theme1 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -5vh;
+  animation: show 5s 0s 1;
+
+  .back {
+    background-image: url('https://i.pinimg.com/originals/ab/20/47/ab20472dd2864bcf048200c098e739c9.jpg');
+    background-size: 100% 100%;
+    width: 120vw;
+    height: 160vh;
+  }
+
+  .clue-back {
+    .hammer {
+      position: absolute;
+      width: 10vw !important;
+      height: 30vh !important;
+      left: 24vw;
+      top: 75vh;
+      transform: rotate(-90deg);
+      filter: brightness(40%);
+    }
+
+    .helmet {
+      width: 12vw;
+      height: 18.5vh;
+      position: absolute;
+      filter: brightness(50%);
+      top: 20vh;
+      left: 105vw;
+    }
+
+    .saw {
+      width: 17vw;
+      height: 16vh;
+      position: absolute;
+      filter: brightness(65%);
+      top: 61vh;
+      left: 50vw;
+    }
+
+    .tool-box {
+      width: 15vw;
+      height: 10vw;
+      position: absolute;
+      left: -1vw;
+      top: 72vh;
+      transform: rotate(-10deg);
+      filter: brightness(20%);
+    }
+
+    .blood-written {
+      position: absolute;
+      width: 13vw;
+      filter: brightness(70%);
+      opacity: 60%;
+      top: 21vh;
+      left: 30vw;
+    }
+  }
+}
+
+.box {
   height: fit-content;
   width: fit-content;
   position: fixed;
   top: 0.5vh;
-  left: calc(50% - 240px);
+  left: calc(50% - 34vh);
   display: flex;
 
   div {
-    height: 100px;
-    width: 100px;
-    padding: 10px;
-    margin: 5px;
-    border: 8px solid black;
+    height: 14vh;
+    width: 14vh;
+    padding: 1.75vh;
+    margin: 0.7vh;
+    border: 1.3vh solid black;
     border-radius: 50%;
     box-sizing: border-box;
     overflow: hidden;
@@ -625,28 +493,28 @@ body {
     background-color: rgb(79, 3, 3);
 
     img {
-      width: 95px;
+      width: 15vh;
     }
 
     .hammer {
-      width: 60px;
+      width: 10vh;
       object-fit: cover;
     }
 
     .helmet {
-      height: 80px;
+      height: 12vh;
       margin-right: -20px;
       margin-top: -10px;
       object-fit: cover;
     }
 
     .saw {
-      height: 35px;
+      height: 5.8vh;
       object-fit: cover;
     }
 
     span {
-      font-size: 50px;
+      font-size: 8vh;
       font-weight: bold;
       font-family: "Chiller";
       color: rgb(253, 244, 238);
@@ -654,32 +522,36 @@ body {
   }
 }
 
-.clue_box3 {
+.clue-box {
   width: 100%;
-  height: 110px;
+  height: 18vh;
   position: fixed;
   display: flex;
   bottom: 0;
 
   .timer {
-    height: 100px;
+    height: 16.5vh;
     width: 12.5%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
+    margin: 0.8vh;
+    border: 1.5vh solid black;
     border-radius: 50%;
     box-sizing: border-box;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(./img/back31.jpg);
 
     span {
-      font-size: 50px;
+      font-size: 8.2vh;
       font-weight: bold;
       font-family: "Chiller";
       color: rgb(253, 244, 238);
+    }
+
+    .score {
+      font-size: 5vh !important;
     }
   }
 
@@ -693,43 +565,25 @@ body {
     button {
       width: 24%;
       padding: 1%;
-      height: 43px;
+      height: 7vh;
       border: none;
-      border-radius: 30px;
+      border-radius: 5vh;
       box-sizing: border-box;
       opacity: 100%;
       background-image: url(./img/back31.jpg);
-      box-shadow: 1px 1px 2px 2px black;
+      border: 0.5vh solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       span {
         color: rgb(253, 244, 238);
-        font-size: 20px;
+        font-size: 3.3vh;
         font-weight: bold;
+        font-family: "Chiller";
+        letter-spacing: 0.3vh;
         opacity: 100%;
       }
-    }
-  }
-
-  .score {
-    height: 100px;
-    width: 12.5%;
-    padding: 10px;
-    margin: 5px;
-    border: 10px solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back31.jpg);
-    flex-direction: column;
-
-    span {
-      font-size: 30px;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(253, 244, 238);
     }
   }
 }
@@ -739,43 +593,44 @@ body {
 
   .container {
     .game {
-      position: fixed;
+      position: absolute;
       background-image: url('./img/treasure-back.jpg');
       background-size: cover;
-      height: 106%;
+      height: 106vh;
     }
   }
 
   .key-boxes {
-    width: 50%;
-    height: 200px;
-    display: flex;
     position: absolute;
-    top: calc(50% - 100px);
-    left: 25%;
+    width: 54vw;
+    height: 30vh;
+    display: flex;
+    top: 35vh;
+    left: 23vw;
+    justify-content: space-between;
 
     .img-container {
       img {
-        height: 200px;
+        position:inherit;
+        height: 30vh;
         object-fit: cover;
-        margin: 0px 10px;
       }
 
       .box {
+        cursor: pointer;
         z-index: 12;
       }
 
       div {
         background-image: url(./img/backlight.png);
-        background-size: 200px;
-        height: 200px;
-        width: 200px;
+        background-size: 30vh;
+        height: 30vh;
+        width: 28vh;
         background-repeat: no-repeat;
         position: relative;
-        top: -205px;
+        top: -31vh;
         left: 0px;
         animation: spin 1s linear infinite;
-
         .key {
           animation: spin1 1s linear infinite;
         }
@@ -791,8 +646,8 @@ body {
   display: flex;
 
   img {
-    width: 40px;
-    margin: 10px 5px;
+    width: 6.6vh;
+    margin: 1.5vh 1vh;
   }
 }
 
@@ -806,26 +661,26 @@ body {
     font-family: "Chiller";
     color: #CB0000;
     position: relative;
-    right: 0.5vw;
-    top: 0.5vw;
-    height: 75px;
-    width: 75px;
+    right: 1vw;
+    top: 1vw;
+    height: 11.3vh;
+    width: 11.3vh;
     border-radius: 50%;
     border: none;
     padding: 0px;
-    border-top: 4px ridge #ffb000;
-    border-left: 4px groove #ffb000;
-    border-right: 4px ridge #ffb000;
-    border-bottom: 4px groove #ffb000;
-    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    border-top: 0.7vh ridge #ffb000;
+    border-left: 0.7vh groove #ffb000;
+    border-right: 0.7vh ridge #ffb000;
+    border-bottom: 0.7vh groove #ffb000;
+    box-shadow: inset 0px 0px 0.7vh 0.5vh rgba(1, 1, 1, 0.3);
     cursor: pointer;
 
     &:hover {
-      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      box-shadow: 0px 0 0.7vh 0.7vh rgba(255, 255, 255, 0.2)
     }
 
     &:active {
-      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      box-shadow: 0px 0 0.7vh 0.7vh rgba(255, 255, 255, 0.2)
     }
 
     img {
@@ -844,30 +699,27 @@ body {
     right: 0;
     background-color: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
+    border: 0.2vh solid rgba(0, 0, 0, 0.3);
+    border-radius: 3vh;
     animation: show1 0.5s linear 1;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.7vh 5vh rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     .cross {
-      width: 40px;
+      width: 6vh;
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 2.5vh;
+      left: 2.5vh;
       cursor: pointer;
 
-      &:hover {
-        width: 38px;
-        top: 16px;
-        left: 16px;
-      }
-
       &:active {
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.7vh 5vh rgba(0, 0, 0, 0.2);
+        width: 5.5vh;
+        top: 3vh;
+        left: 3vh;
       }
     }
 
@@ -879,21 +731,21 @@ body {
       animation: show2 0.5s linear 0s 1;
 
       div {
-        width: 120px;
-        height: 120px;
+        width: 18vh;
+        height: 18vh;
         animation: show2 0.5s linear 0s 1;
-        border-top: 4px ridge #ffb000;
-        border-left: 4px groove #ffb000;
-        border-right: 4px ridge #ffb000;
-        border-bottom: 4px groove #ffb000;
-        box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+        border-top: 0.7vh ridge #ffb000;
+        border-left: 0.7vh groove #ffb000;
+        border-right: 0.7vh ridge #ffb000;
+        border-bottom: 0.7vh groove #ffb000;
+        box-shadow: inset 0px 0px 0.8vh 0.5vh rgba(1, 1, 1, 0.3);
 
         &:hover {
-          box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+          box-shadow: 0px 0 0.8vh 0.8vh rgba(255, 255, 255, 0.2)
         }
 
         &:active {
-          box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+          box-shadow: 0px 0 0.8vh 0.8vh rgba(255, 255, 255, 0.2)
         }
 
         img {
@@ -904,7 +756,7 @@ body {
       }
 
       .name {
-        font-size: 60px;
+        font-size: 10vh;
         font-family: 'Chiller';
         color: #CB0000;
         margin: 0;
@@ -912,9 +764,10 @@ body {
 
       p {
         color: rgb(253, 251, 225);
-        font-size: 28px;
+        font-size: 4vh;
         font-family: "Gruppo";
-        margin: 5px;
+        margin: 0.8vh;
+        margin-top:0.2vh;
         font-weight: bold;
         animation: show2 0.5s linear 0s 1;
       }
@@ -924,41 +777,44 @@ body {
       position: absolute;
       top: 4vh;
       right: 2vh;
-      border-radius: 20px;
+      border-radius: 3vh;
       border: none;
-      padding: 10px 20px !important;
-      width: 100px;
+      padding: 1.7vh 3vh !important;
+      width: 15vh;
       height: 6vh;
       background-color: #cb0000;
       color: rgb(253, 251, 225);
       font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 20px;
-      box-shadow: 0px 0px 5px red;
+      letter-spacing: 0.4vh;
+      font-size: 3vh;
+      box-shadow: 0px 0px 0.7vh red;
       animation: show2 0.5s linear 1;
+      &:active {
+        box-shadow: 0px 0 0.6vh 0.6vh rgba(255, 255, 255, 0.2)
+      }
     }
 
     .leader-board {
-      border: 1px solid rgb(65, 64, 64);
+      border: 0.2vh solid rgb(65, 64, 64);
       width: 90%;
       height: 100%;
       margin: 5%;
-      padding: 10px;
+      padding: 1.5vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-sizing: border-box;
-      border-radius: 20px;
+      border-radius: 3vh;
       overflow: scroll;
-      gap: 10px;
+      gap: 1.5vh;
       animation: show2 0.5s linear 1;
 
       h1 {
         color: white;
         margin: 0px;
-        margin: 8px;
+        margin: 1vh;
         font-family: "Chiller";
-        letter-spacing: 5px;
+        letter-spacing: 0.7vh;
         color: #e1d3d3;
       }
 
@@ -968,40 +824,39 @@ body {
         justify-content: space-between;
         align-items: center;
         box-sizing: border-box;
-
+        animation: show2 0.5s linear 0s 1;
         div {
           display: flex;
           justify-content: center;
           align-items: center;
 
           img {
-            width: 70px;
-            height: 60px;
+            width: 10.5vh;
+            height: 10vh;
             object-fit: cover;
             border-radius: 50%;
             box-sizing: border-box;
-            border-top: 4px ridge #ffb000;
-            border-left: 4px groove #ffb000;
-            border-right: 4px ridge #ffb000;
-            border-bottom: 4px groove #ffb000;
+            border-top: 0.7vh ridge #ffb000;
+            border-left: 0.7vh groove #ffb000;
+            border-right: 0.7vh ridge #ffb000;
+            border-bottom: 0.7vh groove #ffb000;
           }
 
           p {
-            font-size: 40px;
+            font-size: 6vh;
             margin: 0;
-            margin-left: 20px;
+            margin-left: 3vh;
             font-family: "Chiller";
           }
         }
 
-        padding: 0.5rem 2rem;
-        border-radius: 1rem;
-        line-height: 2rem;
-        font-size: 2rem;
+        padding: 1vh 4vh;
+        border-radius: 2vh;
+        line-height: 5vh;
+        font-size: 5vh;
         font-weight: 600;
-        border:3px solid rgb(84, 82, 82);
-
-        background: rgba(199, 113, 113,0.6);
+        border:0.5vh solid rgb(84, 82, 82);
+        background: rgba(199, 113, 113, 0.6);
 
         span {
           color: transparent;
@@ -1009,7 +864,7 @@ body {
           -webkit-background-clip: text;
           background-clip: text;
           font-family: "Chiller";
-          filter: drop-shadow(0 2px 2px rgb(102, 32, 0));
+          filter: drop-shadow(0 0.4vh 0.4vh rgb(102, 32, 0));
         }
       }
 
@@ -1017,15 +872,15 @@ body {
 
     .leader-board::-webkit-scrollbar-thumb {
       background-color: black;
-      border-radius: 10px;
-      height: 100px;
+      border-radius: 1.5vh;
+      height: 15vh;
       background-clip: content-box;
-      border: 1px solid transparent;
+      border: 0.2vh solid transparent;
     }
 
     .leader-board::-webkit-scrollbar {
       height: 100%;
-      width: 7px;
+      width: 1vh;
     }
 
     .leader-board::-webkit-scrollbar-track {
@@ -1042,28 +897,26 @@ body {
 
   button {
     font-family: "Chiller";
-    color: #CB0000;
     position: relative;
-    right: 0.5vw;
-    top: 0.5vw;
-    height: 75px;
-    width: 75px;
+    right: 1vw;
+    top: 1vw;
+    height: 11.3vh;
+    width: 11.3vh;
     border-radius: 50%;
     border: none;
     padding: 0px;
-    border-top: 4px ridge #ffb000;
-    border-left: 4px groove #ffb000;
-    border-right: 4px ridge #ffb000;
-    border-bottom: 4px groove #ffb000;
-    box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+    border-top: 0.5vh ridge #ffb000;
+    border-left: 0.5vh groove #ffb000;
+    border-right: 0.5vh ridge #ffb000;
+    border-bottom: 0.5vh groove #ffb000;
+    box-shadow: inset 0px 0px 0.8vh 0.5vh rgb(0,0,0,0.3);
     cursor: pointer;
-
     &:hover {
-      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      box-shadow: 0px 0 0.6vh 0.6vh rgba(255, 255, 255, 0.2)
     }
 
     &:active {
-      box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+      box-shadow: 0px 0 0.6vh 0.6vh rgba(255, 255, 255, 0.2)
     }
 
     img {
@@ -1085,10 +938,10 @@ body {
     right: 0;
     background-color: rgb(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
+    border: 0.3vh solid rgba(0, 0, 0, 0.3);
+    border-radius: 2.5vh;
     animation: show3 0.5s linear 1;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.7vh 5vh rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1096,27 +949,24 @@ body {
     align-items: center;
 
     .cross {
-      width: 40px;
+      width: 6vh;
       position: absolute;
-      top: 15px;
-      left: 15px;
+      top: 2.5vh;
+      left: 2.5vh;
       cursor: pointer;
 
-      &:hover {
-        width: 38px;
-        top: 16px;
-        left: 16px;
-      }
-
       &:active {
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        width: 5.5vh;
+        top: 3vh;
+        left: 3vh;
+        box-shadow: 0 0.8vh 5vh rgba(0, 0, 0, 0.2);
       }
     }
 
     p {
       color: white;
       animation: show2 0.5s linear 1;
-
+      font-size: 2.5vh;
       span {
         color: #cb0000;
         text-decoration: underline;
@@ -1129,7 +979,7 @@ body {
     }
 
     .p {
-      font-size: 50px;
+      font-size: 8vh;
       color: #cb0000;
       font-family: "Chiller";
       margin: 0;
@@ -1140,19 +990,19 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 14px;
+      gap: 2vh;
       height: 100%;
       width: 100%;
       animation: show2 0.5s linear 0s 1;
 
       input {
-        padding: 10px;
+        padding: 1.5vh;
         border: none;
-        border-bottom: 2px solid black;
+        border-bottom: 0.4vh solid black;
         width: 60%;
         background-color: rgb(48, 48, 48);
         color: white;
-
+        font-size: 2vh;
         &::placeholder {
           color: rgb(175, 175, 175);
         }
@@ -1160,18 +1010,18 @@ body {
 
       label {
         align-items: center;
-        gap: 20px;
+        gap: 3vh;
         color: rgb(175, 175, 175);
         display: flex;
         cursor: pointer;
 
         img {
-          width: 100px;
+          width: 15vh;
         }
 
         span {
           font-weight: 500;
-          font-size: 20px;
+          font-size: 3vh;
           color: rgb(48, 48, 48);
         }
       }
@@ -1180,10 +1030,11 @@ body {
         width: 60%;
         display: flex;
         justify-content: center;
-        margin-left: -14%;
+        margin-left: -6vh;
 
         label {
-          margin-left: -15%;
+          margin-left: -4vh;
+          font-size: 3vh;
         }
       }
 
@@ -1194,17 +1045,13 @@ body {
         border-radius: 0;
         width: 40%;
         height: 8vh;
-        padding: 10px;
+        padding: 1.5vh;
         font-weight: bold;
-        letter-spacing: 5px;
-        font-size: 25px;
+        letter-spacing: 0.8vh;
+        font-size: 3.5vh;
         cursor: pointer;
       }
-
-      span {
-        color: #cb0000;
-        font-size: 20px;
-      }
+      
     }
   }
 }
@@ -1217,10 +1064,10 @@ body {
 
   .container {
     .game {
-      margin-top: -13%;
-      margin-left: -40%;
-      width: 180%;
-      height: 150%;
+      margin-top: -17vh;
+      margin-left: -40vw;
+      width: 180vw;
+      height: 150vh;
       background-image: url('./img/stages-back1.jpg');
       background-size: cover;
       filter: brightness(60%);
@@ -1229,29 +1076,29 @@ body {
 
   .stages {
     position: absolute;
-    top: 27%;
-    left: 9%;
+    top: 27vh;
+    left: 9vw;
     display: flex;
 
     .border {
-      border-top: 4px ridge #ffb000;
-      border-left: 4px groove #ffb000;
-      border-right: 4px ridge #ffb000;
-      border-bottom: 4px groove #ffb000;
-      box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+      border-top: 1vh ridge #ffb000;
+      border-left: 1vh groove #ffb000;
+      border-right: 1vh ridge #ffb000;
+      border-bottom: 1vh groove #ffb000;
+      box-shadow: inset 0px 0px 1.2vh 1vh rgba(1, 1, 1, 0.3);
 
       &:hover {
-        box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+        box-shadow: 0px 0 1.2vh 1.2vh rgba(255, 255, 255, 0.2)
       }
 
       &:active {
-        box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2)
+        box-shadow: 0px 0 1.2vh 1.2vh rgba(255, 255, 255, 0.2)
       }
 
       margin:1%;
       width:20vw;
       height:18vw;
-      border-radius:20px;
+      border-radius:3vh;
 
       div {
         width: 100%;
@@ -1261,16 +1108,16 @@ body {
       img {
         width: 100%;
         height: 100%;
-        border-radius: 20px;
+        border-radius: 3vh;
       }
 
       .lock {
         position: absolute;
         top: 28%;
         left: 30%;
-        width: 100px;
+        width: 15vh;
         object-fit: cover;
-        height: 100px;
+        height: 15vh;
         filter: brightness(200%);
       }
     }
@@ -1302,25 +1149,25 @@ body {
 
     .start {
       position: absolute;
-      top: 103%;
-      left: 41.5%;
+      top: 46vh;
+      left: 34.5vw;
       cursor: pointer;
-      padding: 1.5rem 2.5rem;
-      border-radius: 3.75rem;
-      line-height: 2rem;
-      font-size: 2rem;
+      padding: 4vh 3vw;
+      border-radius: 15vh;
+      line-height: 4vh;
+      font-size: 4vh;
       font-weight: bold;
       border: 1px solid #414343;
       background-image: linear-gradient(-180deg, #000000 0%, #CB0000 100%);
-      box-shadow: 0 1rem 1.25rem 0 rgba(185, 84, 25, 0.5),
-        0 -0.25rem 1.5rem rgb(237, 92, 8) inset,
-        0 0.75rem 0.5rem rgba(235, 127, 127, 0.4) inset,
-        0 0.25rem 0.5rem 0 rgb(223, 81, 53) inset;
+      box-shadow: 0 2vh 2vh 0 rgba(185, 84, 25, 0.5),
+        0 -0.5vh 3vh rgb(237, 92, 8) inset,
+        0 1.5vh 1vh rgba(235, 127, 127, 0.4) inset,
+        0 0.5vh 1vh 0 rgb(223, 81, 53) inset;
 
       &:hover {
-        padding: 1.7rem 2.7rem;
-        left: 41.1%;
-        top: 102%;
+        padding: 4.4vh 3.1vw;
+        left: 34.4vw;
+        top: 45.6vh;
       }
 
       &:active {
@@ -1333,23 +1180,21 @@ body {
         -webkit-background-clip: text;
         font-family: "Chiller";
         background-clip: text;
-        letter-spacing: 8px;
-        font-size: 40px;
-        filter: drop-shadow(0 2px 2px rgb(218, 0, 0));
+        letter-spacing: 1.5vh;
+        font-size: 6vh;
+        filter: drop-shadow(0 0.5vh 0.5vh rgb(218, 0, 0));
       }
 
       &::before {
         content: "";
         display: block;
-        height: 0.25rem;
+        height: 0.5vh;
         position: absolute;
-        top: 0.5rem;
+        top: 1.5vh;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(100% - 7.5rem);
-        // background: #fff;
+        width: calc(100% - 20vh);
         border-radius: 100%;
-
         opacity: 0.7;
         background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
       }
@@ -1357,13 +1202,12 @@ body {
       &::after {
         content: "";
         display: block;
-        height: 0.25rem;
+        height: 0.5vh;
         position: absolute;
-        bottom: 0.75rem;
+        bottom: 1.5vh;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(100% - 7.5rem);
-        // background: #fff;
+        width: calc(100% - 20vh);
         border-radius: 100%;
         filter: blur(1px);
         opacity: 0.05;
@@ -1374,6 +1218,7 @@ body {
 }
 
 .instructions {
+  cursor: pointer;
   img {
     position: fixed;
     width: 10%;
@@ -1385,10 +1230,10 @@ body {
   .msg {
     animation: pop-up2 1s linear 1 !important;
     background-image: url("./img/treasure-back.jpg") !important;
-    border-top: 8px ridge #ffb000;
-    border-left: 8px groove #ffb000;
-    border-right: 8px ridge #ffb000;
-    border-bottom: 8px groove #ffb000;
+    border-top: 1.5vh ridge #ffb000;
+    border-left: 1.5vh groove #ffb000;
+    border-right: 1.5vh ridge #ffb000;
+    border-bottom: 1.5vh groove #ffb000;
     filter: brightness(100%) !important;
 
     p {
@@ -1404,22 +1249,22 @@ body {
     button {
       color: white;
       background: #640e0e;
-      border-top: 2px solid #df9d9d;
-      border-left: 2px solid #daa3a3;
-      border-right: 2px solid #cb0000;
-      border-bottom: 2px solid #cb0000;
+      border-top: 0.4vh solid #df9d9d;
+      border-left: 0.4vh solid #daa3a3;
+      border-right: 0.4vh solid #cb0000;
+      border-bottom: 0.4vh solid #cb0000;
 
       &:active {
-        box-shadow: 0px 0 3px 3px rgba(27, 26, 26, 0.2);
-        border-right: 2px solid #df9d9d;
-        border-bottom: 2px solid #daa3a3;
-        border-top: 2px solid #cb0000;
-        border-left: 2px solid #cb0000;
+        box-shadow: 0px 0 0.5vh 0.5vh rgba(27, 26, 26, 0.2);
+        border-right: 0.4vh solid #df9d9d;
+        border-bottom: 0.4vh solid #daa3a3;
+        border-top: 0.4vh solid #cb0000;
+        border-left: 0.4vh solid #cb0000;
       }
 
       &:hover {
         color: #efdbdb;
-        box-shadow: 0px 0 3px 3px rgba(27, 26, 26, 0.2);
+        box-shadow: 0px 0 0.5vh 0.5vh rgba(27, 26, 26, 0.2);
       }
     }
   }
@@ -1443,10 +1288,10 @@ body {
   height: 60vh;
   background: linear-gradient(#898484, #423939, #484848, #615d5c);
   border-radius: 20px;
-  border-top: 6px ridge rgb(130, 127, 127);
-  border-left: 6px groove rgb(130, 127, 127);
-  border-right: 6px ridge rgb(130, 127, 127);
-  border-bottom: 6px groove rgb(130, 127, 127);
+  border-top: 1vh ridge rgb(130, 127, 127);
+  border-left: 1vh groove rgb(130, 127, 127);
+  border-right: 1vh ridge rgb(130, 127, 127);
+  border-bottom: 1vh groove rgb(130, 127, 127);
   box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
   display: flex;
   justify-content: center;
@@ -1457,13 +1302,13 @@ body {
   .border-img {
     position: absolute;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 3vh;
     height: 100%;
     filter: grayscale(80%);
   }
 
   .lose {
-    font-size: 100px;
+    font-size: 15.38vh;
     color: #360d0d;
     font-family: "Chiller";
     margin: 0;
@@ -1473,24 +1318,23 @@ body {
   }
 
   .score {
-    font-size: 35px;
+    font-size: 5.4vh;
     font-family: "Gruppo";
     font-weight: bold;
     margin: 0px;
     color: rgb(213, 213, 213);
-    margin-bottom: 10px;
+    margin-bottom: 1.5vh;
   }
 
   button {
-    padding: 7px 30px;
-    min-width: 60px;
+    padding: 1vh 5vh;
+    min-width: 10vh;
     background: rgb(65, 48, 48);
-    // background: transparent;
     color: rgb(197, 196, 196);
-    font-size: 30px;
-    margin-top: 20px;
+    font-size: 5vh;
+    margin-top: 3vh;
     font-family: "Chiller";
-    z-index: 10;
+    z-index: 1;
 
     &:hover {
       box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
@@ -1505,17 +1349,17 @@ body {
 
 .Win {
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 40%;
-  filter: blur(100%);
+  background: rgba(0, 0, 0);
+  opacity: 50%;
+  filter: blur(50px);
   top: 0;
 }
 
 .border {
-  border-top: 6px ridge #ffb000 !important;
-  border-left: 6px groove #ffb000 !important;
-  border-right: 6px ridge #ffb000 !important;
-  border-bottom: 6px groove #ffb000 !important;
+  border-top: 1vh ridge #ffb000 !important;
+  border-left: 1vh groove #ffb000 !important;
+  border-right: 1vh ridge #ffb000 !important;
+  border-bottom: 1vh groove #ffb000 !important;
   background-image: url(./img/treasure-back.jpg) !important;
 }
 
@@ -1527,27 +1371,27 @@ body {
   height: 60vh;
   background-image: url(./img/win-back.jpeg);
   background-size: 100% 100%;
-  border-top: 6px ridge black;
-  border-left: 6px groove black;
-  border-right: 6px ridge grey;
-  border-bottom: 6px groove grey;
-  box-shadow: inset 0px 0px 5px 3px rgba(121, 120, 120, 0.3);
+  border-top: 1vh ridge rgb(215, 212, 212);
+  border-left: 1vh ridge rgb(215, 212, 212);
+  border-right: 1vh ridge rgb(215, 212, 212);
+  border-bottom: 1vh groove rgb(215, 212, 212);
+  box-shadow: inset 0px 0px 1vh 0.5vh rgba(121, 120, 120, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 5vh;
   animation: pop-show 1s linear;
-  box-shadow: 0px 0 5px 5px rgba(255, 255, 255, 0.2);
-  padding: 20px;
+  box-shadow: 0px 0 0.5vh 0.5vh rgba(255, 255, 255, 0.2);
+  padding: 3vh;
   box-sizing: border-box;
 
   .key-back {
     background-image: url(./img/backlight.png);
-    background-size: 300px;
-    height: 300px;
-    width: 300px;
+    background-size: cover;
+    width: 40vh;
+    height: 40vh;
     background-repeat: no-repeat;
     position: relative;
     left: 0px;
@@ -1555,14 +1399,16 @@ body {
 
     .key {
       animation: spin1 1s linear infinite;
-      width: 95%;
+      width: 39vh;
     }
   }
 
   .container {
     .game {
-      margin-left: -26%;
-      width: 150%;
+      margin-left: -35vh;
+      margin-top: -2vh;
+      width: 135vh;
+      height: 65vh;
       z-index: -1;
     }
   }
@@ -1571,11 +1417,12 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+
   }
 
   .win {
-    font-size: 100px;
-    text-shadow: 0px 0px 10px black,
+    font-size: 15vh;
+    text-shadow: 0px 0px 1.7vh black,
       0px 0px 20px black,
       0px 0px 30px black,
       0px 0px 40px black,
@@ -1586,35 +1433,35 @@ body {
   }
 
   .level {
-    font-size: 40px;
+    font-size: 6vh;
     font-family: "Chiller";
     font-weight: bold;
     margin: 0;
     color: white;
-    text-shadow: 0px 0px 10px #cb0000;
-    letter-spacing: 2px;
+    text-shadow: 0px 0px 1.5vh #cb0000;
+    letter-spacing: 0.5vh;
   }
 
   .score {
-    font-size: 35px;
+    font-size: 5.25vh;
     font-family: "Gruppo";
     font-weight: 800;
     margin: 0;
     color: rgb(249, 208, 208);
-    text-shadow: 0px 10px 5px black;
+    text-shadow: 0px 1.5vh 1vh black;
   }
 
   .theme4 {
-    margin-top: -10px !important;
-    width: 90% !important;
+    margin-top: -1.6vh !important;
+    width: 85% !important;
 
     .button {
       cursor: pointer;
       position: relative;
-      padding: 1rem 3rem;
-      border-radius: 3.75rem;
-      line-height: 2.5rem;
-      font-size: 2rem;
+      padding: 2vh 6vh;
+      border-radius: 8vh;
+      line-height: 5vh;
+      font-size: 5vh;
       font-weight: 600;
       border: 1px solid #cb0000;
       background-image: linear-gradient(-180deg, #cb0000 0%, #9b0808 100%);
@@ -1634,12 +1481,12 @@ body {
       &::before {
         content: "";
         display: block;
-        height: 0.25rem;
+        height: 0.5vh;
         position: absolute;
-        top: 0.5rem;
+        top: 1vh;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(100% - 7.5rem);
+        width: calc(100% - 4vw) ;
         background: #fff;
         border-radius: 100%;
         opacity: 0.7;
@@ -1649,12 +1496,12 @@ body {
       &::after {
         content: "";
         display: block;
-        height: 0.25rem;
+        height: 0.5vh;
         position: absolute;
-        bottom: 0.75rem;
+        bottom: 2vh;
         left: 50%;
         transform: translateX(-50%);
-        width: calc(100% - 7.5rem);
+        width: calc(100% - 20vh);
         background: #fff;
         border-radius: 100%;
 
@@ -1669,15 +1516,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 65%;
-    margin-top: 10%;
+    width: 55vh;
+    margin-top: 5vh;
 
     button {
-      padding: 7px 25px;
-      min-width: 120px;
+      cursor: pointer;
+      padding: 1vh 4vh;
+      min-width: 17vh;
       color: white;
-      font-size: 30px;
-      text-shadow: 0px 0px 10px red, ;
+      font-size: 5vh;
+      text-shadow: 0px 0px 1.5vh red, ;
       font-family: "Chiller";
       z-index: 10;
       background-image: url(./img/win-back.jpeg);
@@ -1705,14 +1553,14 @@ body {
   right: 7vw;
   width: fit-content;
   height: fit-content;
-  min-width: 130px;
-  padding: 1px 10px;
-  border-radius: 10px;
+  min-width: 20vh;
+  padding: 0.5vh 1.5vh;
+  border-radius: 1.5vh;
   background-image: url(./img/treasure-back.jpg);
-  border-top: 4px ridge #ffb000 !important;
-  border-left: 4px groove #ffb000 !important;
-  border-right: 4px ridge #ffb000 !important;
-  border-bottom: 4px groove #ffb000 !important;
+  border-top: 0.6vh ridge #ffb000 !important;
+  border-left: 0.6vh groove #ffb000 !important;
+  border-right: 0.6vh ridge #ffb000 !important;
+  border-bottom: 0.6vh groove #ffb000 !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1720,16 +1568,92 @@ body {
 
   span {
     font-family: "Chiller";
-    font-size: 30px;
+    font-size: 5vh;
     font-weight: bold;
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 0.3vh;
     color: white;
   }
 }
 
+.WinPage {
+  .container {
+    .game {
+      background-image: url('./img/treasure-back.jpg') !important;
+      background-size: cover;
+      height: 130vh;
+      margin-top:-3vh;
+      margin-left:-23vw;
+    }
+  }
+
+  .button {
+    cursor: pointer;
+    position: absolute;
+    left: 26vw;
+    height: 12vh;
+    bottom: 10vh;
+    width: 48vw;
+    padding: 1vh 3vh;
+    border-radius: 6vh;
+    line-height: 2.5vh;
+    font-size: 2vh;
+    font-weight: 600;
+    box-sizing: border-box;
+    animation: pop-up 10s linear 1;
+    border: 0.3vh solid #cb0000;
+    background-image: linear-gradient(-180deg, #a70606 0%, #640e0e 100%);
+    box-shadow: 0 1rem 3vh 0 rgba(93, 6, 5, 0.5),
+      0 -0.25rem 1.5rem rgb(145, 22, 3) inset,
+      0 0.75rem 0.5rem rgba(114, 47, 47, 0.4) inset,
+      0 0.25rem 0.5rem 0 rgb(144, 31, 5) inset;
+
+    span {
+      color: transparent;
+      background-image: linear-gradient(0deg, #efe5e5 0%, #dedad9 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      font-size: 6vh !important;
+      margin:0;
+      letter-spacing: 1vh;
+      filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      height: 0.25rem;
+      position: absolute;
+      top: 1vh;
+      left: 50vh;
+      transform: translateX(-50%);
+      width: calc(100% - 30vh);
+      background: #fff;
+      border-radius: 100%;
+      opacity: 0.7;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1vh;
+      position: absolute;
+      bottom: 1.5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 7.5rem);
+      background: #fff;
+      border-radius: 100%;
+      filter: blur(1px);
+      opacity: 0.05;
+      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
+    }
+  }
+}
+
 .letter {
-  position: absolute;
+  position: fixed;
   width: 70vw;
   height: 62vh;
   top: 10vh;
@@ -1742,107 +1666,36 @@ body {
   background-image: url('./img/treasure-back.jpg');
   animation: pop-up 10s linear 1;
   border-radius: 25px;
-  border-top: 8px ridge #ffb000;
-  border-left: 8px groove #ffb000;
-  border-right: 8px ridge #ffb000;
-  border-bottom: 8px groove #ffb000;
+  border-top: 1.5vh ridge #ffb000;
+  border-left: 1.5vh groove #ffb000;
+  border-right: 1.5vh ridge #ffb000;
+  border-bottom: 1.5vh groove #ffb000;
   overflow: hidden;
 
   p {
     font-family: "Chiller";
-    font-size: 2.4vw;
+    font-size: 5vh;
     color: rgb(197, 8, 8);
-  }
-}
-
-.WinPage {
-  .container {
-    .game {
-      background-image: url('./img/treasure-back.jpg') !important;
-      background-size: cover;
-      height: 130%;
-    }
-  }
-
-  .button {
-    cursor: pointer;
-    position: absolute;
-    left: 26vw;
-    height: 12vh;
-    bottom: 10vh;
-    width: 48vw;
-    padding: 1rem 3rem;
-    border-radius: 3.75rem;
-    line-height: 2.5rem;
-    font-size: 2rem;
-    font-weight: 600;
-    box-sizing: border-box;
-    animation: pop-up 10s linear 1;
-    border: 1px solid #cb0000;
-    background-image: linear-gradient(-180deg, #a70606 0%, #640e0e 100%);
-    box-shadow: 0 1rem 1.25rem 0 rgba(93, 6, 5, 0.5),
-      0 -0.25rem 1.5rem rgb(145, 22, 3) inset,
-      0 0.75rem 0.5rem rgba(114, 47, 47, 0.4) inset,
-      0 0.25rem 0.5rem 0 rgb(144, 31, 5) inset;
-
-    span {
-      color: transparent;
-      background-image: linear-gradient(0deg, #efe5e5 0%, #dedad9 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      filter: drop-shadow(0 2px 2px hsla(290, 100%, 20%, 1));
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      height: 0.25rem;
-      position: absolute;
-      top: 0.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 7.5rem);
-      background: #fff;
-      border-radius: 100%;
-      opacity: 0.7;
-      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      height: 0.25rem;
-      position: absolute;
-      bottom: 0.75rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: calc(100% - 7.5rem);
-      background: #fff;
-      border-radius: 100%;
-
-      filter: blur(1px);
-      opacity: 0.05;
-      background-image: linear-gradient(-270deg, rgba(255, 255, 255, 0.00) 0%, #FFFFFF 20%, #FFFFFF 80%, rgba(255, 255, 255, 0.00) 100%);
-    }
   }
 }
 
 .msg {
   background-image: url('./img/win-back.jpeg');
   filter: brightness(85%);
-  border-top: 8px ridge rgb(250, 247, 247);
-  border-left: 8px groove rgb(250, 247, 247);
-  border-right: 8px ridge rgb(250, 247, 247);
-  border-bottom: 8px groove rgb(250, 247, 247);
-  animation: pop-up2 2s linear 1 !important;
+  border-top: 1.5vh ridge rgb(250, 247, 247);
+  border-left: 1.5vh groove rgb(250, 247, 247);
+  border-right: 1.5vh ridge rgb(250, 247, 247);
+  border-bottom: 1.5vh groove rgb(250, 247, 247);
+  animation: pop-up2 1.5s linear 1 !important;
 
   p {
     margin-top: 0%;
     color: white;
+    font-size: 5vh;
   }
 
   .p {
-    margin-top: -3%;
+    margin-top: -4vh;
     color: white !important;
   }
 
@@ -1851,13 +1704,12 @@ body {
     bottom: 10%;
     right: 10%;
     padding: 1% 4%;
-    font-size: 20px;
+    font-size: 3.5vh;
     font-family: "Gruppo";
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: 0.6vh;
     background: transparent;
     color: white;
-    text-shadow: 0px 5px 10px black;
 
     &:active {
       color: grey;
@@ -1866,17 +1718,17 @@ body {
 }
 
 .Box1 {
-  height: 144vh !important;
+  height: 155vh !important;
   width: 120vw !important;
 }
 
 .Box2 {
-  height: 135vh !important;
-  width: 125vw !important;
+  height: 134vh !important;
+  width: 120vw !important;
 }
 
 .Box3 {
-  height: 140vh !important;
+  height: 135vh !important;
   width: 130vw !important;
 }
 
@@ -1976,6 +1828,20 @@ body {
   }
 
   30% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes pop-up3 {
+  0% {
+    opacity: 0%;
+  }
+
+  99% {
     opacity: 0%;
   }
 

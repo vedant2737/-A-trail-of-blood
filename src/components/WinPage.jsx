@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { ScoreContext } from '../context/ScoreContext';
 
 const WinPage = () => {
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
     const { currentUser } = useContext(UserContext);
     const { stage, setStage } = useContext(ScoreContext)
     const navigate = useNavigate()
@@ -13,11 +13,11 @@ const WinPage = () => {
         if (!currentUser) { navigate("/"); }
     }, [currentUser])
 
-    useEffect(() => {
-        if (stage === "WinPage") { setShow(true); }
-        const k = "/" + stage;
-        navigate(k);
-    }, [stage])
+    // useEffect(() => {
+    //     if (stage === "WinPage") { setShow(true); }
+    //     const k = "/" + stage;
+    //     navigate(k);
+    // }, [stage])
     const handleClick = () => {
         setStage("stages");
         navigate("/stages");
@@ -34,7 +34,7 @@ const WinPage = () => {
                             allow="autoplay; fullscreen; vr"
                             muted
                             height="100%"
-                            width="100%"
+                            width="105%"
                             src="https://sketchfab.com/models/d822db4920114f7f9910023c2ebe58f3/embed?autostart=1&camera-controls=0"
                         />
                     </div>

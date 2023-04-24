@@ -41,7 +41,7 @@ const Win = () => {
               allow="autoplay; fullscreen; vr"
               muted
               height="100%"
-              width="110%"
+              width="120%"
               src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
             // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
             />
@@ -191,17 +191,17 @@ const Theme2 = () => {
   return (
     <>
       {show &&
-        <>
           <div className="Theme2">
-            <img className="back" onClick={(e) => { handleClick(0, e) }} src="https://castleofchaos.com/wp-content/uploads/2017/05/asylums.jpg" alt="." />
+            <div className='back' onClick={(e) => { handleClick(0, e) }}></div>
+            <div className='clue-back'>
             {clue1 && <img className="injection" onClick={(e) => { handleClick(1, e) }} src={injection} alt="." />}
             {clue2 && <img className="syrup" onClick={(e) => { handleClick(2, e) }} src={syrup} alt="." />}
             {clue3 && <img className="medicines" onClick={(e) => { handleClick(3, e) }} src={medicines} alt="." />}
             {clue4 && <img className="medical-kit" onClick={(e) => { handleClick(4, e) }} src={medicalKit} alt="." />}
             {clue5 && <img className="scissor" onClick={(e) => { handleClick(5, e) }} src={scissor} alt="." />}
             {clue6 && <img className="mask" onClick={(e) => { handleClick(6, e) }} src={mask} alt="." />}
-          </div>
-          <div className='box2'>
+            </div>
+          <div className='box box2'>
             <div>{clue1 ? <span>1</span> : <img className="injection" src={injection} alt="." />}</div>
             <div>{clue2 ? <span>2</span> : <img className="syrup" src={syrup} alt="." />}</div>
             <div>{clue3 ? <span>3</span> : <img className="medicines" src={medicines} alt="." />}</div>
@@ -209,7 +209,7 @@ const Theme2 = () => {
             <div>{clue5 ? <span>5</span> : <img className="scissor" src={scissor} alt="." />}</div>
             <div>{clue6 ? <span>6</span> : <img className="mask" src={mask} alt="." />}</div>
           </div>
-          <div className='clue_box2'>
+          <div className='clue-box clue-box2'>
             <div className='timer'><span className={cRed}>{timer}</span></div>
             <div className='clues'>
               <button>{clue1 && <span>Injection</span>}</button>
@@ -219,9 +219,9 @@ const Theme2 = () => {
               <button>{clue5 && <span>Scissor</span>}</button>
               <button>{clue6 && <span>Oxygen-Mask</span>}</button>
             </div>
-            <div className='score'>
-              <span>Score : </span>
-              <span>{score}</span>
+            <div className='timer'>
+              <span className='score'>Score : </span>
+              <span className='score'>{score}</span>
             </div>
           </div>
           <div className='lives'>
@@ -231,7 +231,8 @@ const Theme2 = () => {
           {win && <Win />}
           {lose && (!win) && <Lose />}
           {msg && <Message msg={message} handleMsgClick={handleMsgClick} win="Box2" />}
-        </>}
+          </div>
+          }
     </>
   )
 }

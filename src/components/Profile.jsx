@@ -18,9 +18,10 @@ const UserView = ({ user }) => {
         </div>
     )
 }
+
 const Profile = () => {
     const { currentUser, user, setUser } = useContext(UserContext)
-    const [show, setShow] = useState(false  );
+    const [show, setShow] = useState(false);
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
         const get = async () => {

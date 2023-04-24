@@ -24,25 +24,25 @@ class ErrorBoundary extends Component {
 }
 
 function App() {
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  // const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1200) {
-        setIsSmallScreen(true);
-      } else {
-        setIsSmallScreen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 1200) {
+  //       setIsSmallScreen(true);
+  //     } else {
+  //       setIsSmallScreen(false);
+  //     }
+  //   };
 
-    window.addEventListener('resize', handleResize);
-    handleResize(); 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  //   window.addEventListener('resize', handleResize);
+  //   handleResize(); 
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
 
-  if (isSmallScreen) {
-    return <h2>Sorry, This website is not responsive, tihs is a desktop based game ,Please open it in desktop for best experience.</h2>;
-  }
+  // if (isSmallScreen) {
+  //   return <h2>Sorry, This website is not responsive, tihs is a desktop based game ,Please open it in desktop for best experience.</h2>;
+  // }
   return (
     <>  
       
@@ -52,9 +52,9 @@ function App() {
           <Route path='/'>
             <Route index element={<Feed/>}/>
             <Route path='stages' element={<Stages/>}/>
-            <Route path='theme1' element={<Theme3/>}/>
+            <Route path='theme1' element={<Theme1/>}/>
             <Route path='theme2' element={<Theme2/>}/>
-            <Route path='theme3' element={<Theme1/>}/>
+            <Route path='theme3' element={<Theme3/>}/>
             <Route path='theme4' element={<Theme4/>}/>
             <Route path='WinPage' element={<WinPage/>}/>
           </Route>

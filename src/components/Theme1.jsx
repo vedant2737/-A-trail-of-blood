@@ -1,21 +1,21 @@
-import bible from '../img/bible.png';
-import keys from '../img/keys.png';
-import jesus from '../img/jesus.png';
-import om from '../img/om.png';
-import water from '../img/water.png';
+import hammer from '../img/hammer.png';
+import helmet from '../img/helmet.png';
+import saw from '../img/saw.png';
+import toolBox from '../img/tool-box.png';
+import bloodWritten from '../img/blood-written.png';
 import heart from '../img/heart.png'
-import loseBorder from '../img/border.png'
+import bloodyBorder from '../img/border.png'
 import { useContext, useEffect, useState } from 'react';
 import { ScoreContext } from '../context/ScoreContext';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../context/UserContext';
 import Message from './Message';
-const message = "I am glad to hear that you have recovered from your injuries. Now, you must continue your quest to find the treasure that you seek.You must search the old library for clues that will bring you closer to the treasure. Look closely and pay attention to hints that will guide you to specific items you must find.Good luck on your journey, player. I am here to guide you.";
+const message = "Your objective is to find specific items hidden in this construction area while avoiding being caught by the ghost. If you fail to find the items before the ghost catches you, you lose the game.To help you locate the items, we have provided some hints in the form of their names. Pay close attention to these hints and search the image carefully. You must find all the items before the ghost catches you.Good luck on your treasure hunt, and beware of the ghost!";
 
 const Win = () => {
   const navigate = useNavigate();
-  const { score, setFoundEle, setNum, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
+  const { score, setNum, setFoundEle, setStage } = useContext(ScoreContext)
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
@@ -25,29 +25,29 @@ const Win = () => {
   const handleNextClick = () => {
     setFoundEle([])
     setNum(0)
-    setStage("theme4");
-    navigate("/theme4")
+    setStage("theme2");
+    navigate("/theme2")
   }
   return (
     <>
-      <div className='Win Box3'></div>
+      <div className='Box1 Win'></div>
       <div className='win-box'>
         <div className='container'>
-        <div className="sketchfab-embed-wrapper game">
-          <iframe
-            title="My 3D Model"
-            frameBorder="0"
-            allow="autoplay; fullscreen; vr"
-            muted
-            height="100%"
-            width="110%"
-            src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
-          // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
-          />
-        </div>
+          <div className="sketchfab-embed-wrapper game">
+            <iframe
+              title="My 3D Model"
+              frameBorder="0"
+              allow="autoplay; fullscreen; vr"
+              muted
+              height="100%"
+              width="120%"
+              src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
+            // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
+            />
+          </div>
         </div>
         <p className='win'>You Win</p>
-        <p className='level'>Level 3 Completed</p>
+        <p className='level'>Level 1 Completed</p>
         <p className='score'>Your Score : {score}</p>
         <p className='score'>Your Max Score : {user.maxScore}</p>
         <div class="buttons">
@@ -61,7 +61,7 @@ const Win = () => {
 
 const Lose = () => {
   const navigate = useNavigate();
-  const { score,setScore, setUnlock, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { score, setScore, setUnlock, setNum, setFoundEle, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
   const handleHomeClick = () => {
     setFoundEle([])
@@ -73,9 +73,9 @@ const Lose = () => {
   }
   return (
     <>
-      <div className='Alert Box3'></div>
+      <div className='Box1 Alert'></div>
       <div className='lose-box'>
-        <img className="border-img" src={loseBorder} alt="."/>
+        <img className="border-img" src={bloodyBorder} alt="." />
         <p className='lose'>You Lose</p>
         <p className='score'>Your Score : {score}</p>
         <p className='score'>Your Max Score : {user.maxScore}</p>
@@ -90,7 +90,7 @@ const WrongAlert = ({ setWrong }) => {
     setWrong(false)
   }, 300);
   return (
-    <div className='Alert Box3'></div>
+    <div className='Alert Box1'></div>
   )
 }
 
@@ -99,32 +99,25 @@ const Theme1 = () => {
   const [clue2, setClue2] = useState(true)
   const [clue3, setClue3] = useState(true)
   const [clue4, setClue4] = useState(true)
-  const [clue5, setClue5] = useState(true)
-  const [clue6, setClue6] = useState(true)
   const [lives, setLives] = useState(3)
+  const [msg, setMsg] = useState(true)
   const [wrong, setWrong] = useState(false)
   const [show, setShow] = useState(false)
-  const [msg, setMsg] = useState(true)
-  const [findNo, setFindNo] = useState(0)
   const [win, setWin] = useState(false)
   const [lose, setLose] = useState(false)
+  const [cRed, setCRed] = useState("")
   const [timer, setTimer] = useState(0)
   const [k, setK] = useState(0)
-  const [cRed, setCRed] = useState("")
   const { score, setScore, setUnlock, unlock, foundEle, setFoundEle, stage, setStage, num, setNum } = useContext(ScoreContext);
   const { currentUser, user, setUser } = useContext(UserContext)
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     if (!currentUser) { navigate("/"); }
-  }, [currentUser]);
+  }, [currentUser])
 
   useEffect(() => {
-    if (unlock >= 3) { setShow(true) }
-    else { navigate("/stages") }
-  }, [unlock]);
-
-  useEffect(() => {
+    if (stage === "theme1") setShow(true);
     const k = "/" + stage;
     navigate(k);
   }, [stage])
@@ -135,17 +128,17 @@ const Theme1 = () => {
         if (timer == 6) { setCRed("c-red") }
         setTimer(timer - 1);
       } else {
-        if(k){
-        setLose(true)
-        setNum(0);
-        setFoundEle([]);
-        setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+        if (k) {
+          setLose(true)
+          setNum(0);
+          setFoundEle([]);
+          setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
         }
         clearInterval(time);
       }
     }, 1000);
     return () => clearInterval(time);
-  }, [timer]);
+  }, [timer])
 
   useEffect(() => {
     if (score > user.maxScore) {
@@ -154,85 +147,84 @@ const Theme1 = () => {
   }, [score])
 
   useEffect(() => {
-    window.scrollTo(300, 300);
+    if (lives == 0) {
+      setNum(0);
+      setFoundEle([]);
+      setLose(true);
+      setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+    }
+  }, [lives])
+
+  useEffect(() => {
+    window.scrollTo(120, 100);
     let k = num;
-    if(foundEle.length<num)k=foundEle.length;
+    if (foundEle.length < num) k = foundEle.length;
     for (let i = 0; i < k; i++) {
       let no = foundEle[i];
       if (no == 1) { setClue1(false); }
       else if (no == 2) { setClue2(false); }
       else if (no == 3) { setClue3(false); }
       else if (no == 4) { setClue4(false); }
-      else if (no == 5) { setClue5(false); }
-      else if (no == 6) { setClue6(false); }
     }
   }, []);
 
   const handleClick = (no, e) => {
-    if (no == 0) { if (lives == 1) { setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 }); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
+    if (no == 0) { setLives(lives - 1); setWrong(true);}
     else if (no == 1) { setClue1(false); }
     else if (no == 2) { setClue2(false); }
     else if (no == 3) { setClue3(false); }
     else if (no == 4) { setClue4(false); }
-    else if (no == 5) { setClue5(false); }
-    else if (no == 6) { setClue6(false); }
-    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num == 5) { setFoundEle([]); setNum(0); setWin(true); if (unlock < 4) setUnlock(4); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
+    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num == 3) { setFoundEle([]); setNum(0); console.log(foundEle); if (unlock < 2) setUnlock(2); setWin(true); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
   }
 
-  const handleMsgClick=()=>{
-    setK(1);
+  const handleMsgClick = () => {
     setTimer(20);
+    setK(1);
     setMsg(false);
   }
 
   const componentsToRender = [];
   for (let i = 0; i < lives; i++) {
-    componentsToRender.push(<img src={heart} key={i} alt="."/>);
+    componentsToRender.push(<img src={heart} key={i} />);
   }
   return (
-    <>{show &&
-      <>
-        <div className="Theme1">
-          <img className="back" onClick={(e) => { handleClick(0, e) }} src="https://www.androidauthority.com/wp-content/uploads/2022/02/The-Room-Old-Sins-best-puzzle-games-android.jpg" />
-          {clue1 && <img className="knife" onClick={(e) => { handleClick(1, e) }} src="https://freepngimg.com/thumb/knife/27688-5-knife-image.png" alt="."/>}
-          {clue2 && <img className="bible" onClick={(e) => { handleClick(2, e) }} src={bible} alt="."/>}
-          {clue3 && <img className="keys" onClick={(e) => { handleClick(3, e) }} src={keys} alt="."/>}
-          {clue4 && <img className="jesus" onClick={(e) => { handleClick(4, e) }} src={jesus} alt="."/>}
-          {clue5 && <img className="om" onClick={(e) => { handleClick(5, e) }} src={om} alt="."/>}
-          {clue6 && <img className="water" onClick={(e) => { handleClick(6, e) }} src={water} alt="."/>}
+    <>{show && 
+      <div className="Theme1">
+        <div className="back" onClick={(e) => { handleClick(0, e)}}></div>
+        <div className='clue-back'>
+        {clue1 && <img className="hammer" onClick={(e) => { handleClick(1, e) }} src={hammer} alt="." />}
+        {clue2 && <img className="helmet" onClick={(e) => { handleClick(2, e) }} src={helmet} alt="." />}
+        {clue3 && <img className="saw" onClick={(e) => { handleClick(3, e) }} src={saw} alt="." />}
+        {clue4 && <img className="tool-box"  onClick={(e) => { handleClick(4, e) }} src={toolBox} alt="." />}
+        <img className="blood-written" onClick={(e) => { handleClick(0, e) }} src={bloodWritten} alt="." />
         </div>
-        <div className='box1'>
-          <div>{clue1 ? <span>1</span> : <img className="knife" src="https://freepngimg.com/thumb/knife/27688-5-knife-image.png" alt="."/>}</div>
-          <div>{clue2 ? <span>2</span> : <img className="bible" src={bible} alt="."/>}</div>
-          <div>{clue3 ? <span>3</span> : <img className="keys" src={keys} alt="."/>}</div>
-          <div>{clue4 ? <span>4</span> : <img className="jesus" src={jesus} alt="."/>}</div>
-          <div>{clue5 ? <span>5</span> : <img className="om" src={om} alt="."/>}</div>
-          <div>{clue6 ? <span>6</span> : <img className="water" src={water} alt="."/>}</div>
-
+      <div className='box'>
+        <div>{clue1 ? <span>1</span> : <img className="hammer" src={hammer} alt="." />}</div>
+        <div>{clue2 ? <span>2</span> : <img className="helmet" src={helmet} alt="." />}</div>
+        <div>{clue3 ? <span>3</span> : <img className="saw" src={saw} alt="." />}</div>
+        <div>{clue4 ? <span>4</span> : <img className="tool-box" src={toolBox} alt="." />}</div>
+      </div>
+      <div className='clue-box'>
+        <div className='timer'><span className={cRed}>{timer}</span></div>
+        <div className='clues'>
+          <button>{clue1 && <span>Hammer</span>}</button>
+          <button>{clue2 && <span>Helmet</span>}</button>
+          <button>{clue3 && <span>Saw</span>}</button>
+          <button>{clue4 && <span>Tool Kit</span>}</button>
         </div>
-        <div className='clue_box1'>
-          <div className='timer'><span className={cRed}>{timer}</span></div>
-          <div className='clues'>
-            <button>{clue1 && <span>Holy Sword</span>}</button>
-            <button>{clue2 && <span>Book</span>}</button>
-            <button>{clue3 && <span>Key</span>}</button>
-            <button>{clue4 && <span>Christian Logo</span>}</button>
-            <button>{clue5 && <span>Om</span>}</button>
-            <button>{clue6 && <span>Pot</span>}</button>
-          </div>
-          <div className='score'>
-            <span>Score : </span>
-            <span>{score}</span>
-          </div>
+        <div className='timer'>
+          <span className="score">Score : </span>
+          <span className='score'>{score}</span>
         </div>
-        <div className='lives'>
-          {componentsToRender}
-        </div>
-        {wrong && <WrongAlert setWrong={setWrong} />}
-        {win && <Win />}
-        {lose && (!win) && <Lose />}
-        {msg && <Message msg={message}  handleMsgClick={handleMsgClick} win="Box3"/>}
-      </>
+      </div>
+      <div className='lives'>
+        {componentsToRender}
+      </div>
+      {wrong && <WrongAlert setWrong={setWrong} />}
+      {win && <Win /> }
+      {lose && (!win) && <Lose />}
+      {msg && <Message msg={message} handleMsgClick={handleMsgClick} win="Box1" />}
+      </div>
     }
     </>
   )
