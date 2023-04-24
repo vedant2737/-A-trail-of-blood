@@ -102,6 +102,12 @@ const Theme4 = () => {
   }, [stage])
 
   useEffect(() => {
+    if (score > user.maxScore) {
+      setUser({ ...user, maxScore: score });
+    }
+  }, [score])
+  
+  useEffect(() => {
     const k = Math.floor(Math.random() * 1000) % 3;
     setKeyNo(k);
   }, [])
@@ -118,7 +124,7 @@ const Theme4 = () => {
       setWin(true);
       setUser({ ...user, winGames: user.winGames + 1 ,matchPlayed: user.matchPlayed + 1});
       setScore(score + 10000 + 5000 * lives);
-
+      
       if (k === 0) setKey0(true)
       else if (k === 1) setKey1(true)
       else setKey2(true)

@@ -239,7 +239,7 @@ body {
       position: absolute;
       width: 5vw;
       height:10vh;
-      right: -34vw;
+      right: -35vw;
       top: 33vh;
       filter: brightness(45%);
     }
@@ -597,6 +597,7 @@ body {
       background-image: url('./img/treasure-back.jpg');
       background-size: cover;
       height: 106vh;
+      margin-top:-5vh;
     }
   }
 
@@ -1051,6 +1052,10 @@ body {
         font-size: 3.5vh;
         cursor: pointer;
       }
+      span{
+        color:#cb0000;
+        font-size: 3.5vh;
+      }
       
     }
   }
@@ -1080,7 +1085,8 @@ body {
     left: 9vw;
     display: flex;
     justify-content: space-between;
-
+    width:82vw;
+    height:50vh;
     .border {
       border-top: 1vh ridge #ffb000;
       border-left: 1vh groove #ffb000;
@@ -1096,7 +1102,7 @@ body {
         box-shadow: 0px 0 1.2vh 1.2vh rgba(255, 255, 255, 0.2)
       }
 
-      margin:1%;
+      margin:1.3vh;
       width:20vw;
       height:38vh;
       border-radius:3vh;
@@ -1149,16 +1155,16 @@ body {
     }
 
     .start {
-      position: absolute;
-      top: 46vh;
-      left: 34.5vw;
+      position: fixed;
+      top: 73vh;
+      left: 43vw;
       cursor: pointer;
       padding: 4vh 3vw;
       border-radius: 15vh;
       line-height: 4vh;
       font-size: 4vh;
       font-weight: bold;
-      border: 1px solid #414343;
+      border: 0.2vh solid #414343;
       background-image: linear-gradient(-180deg, #000000 0%, #CB0000 100%);
       box-shadow: 0 2vh 2vh 0 rgba(185, 84, 25, 0.5),
         0 -0.5vh 3vh rgb(237, 92, 8) inset,
@@ -1167,12 +1173,12 @@ body {
 
       &:hover {
         padding: 4.4vh 3.1vw;
-        left: 34.4vw;
-        top: 45.6vh;
+        top: 72.6vh;
+        left: 42.9vw;
       }
 
       &:active {
-        box-shadow: 0px 0 5px 5px rgba(226, 19, 19, 0.2)
+        box-shadow: 0px 0 0.7vh 0.7vh rgba(226, 19, 19, 0.2)
       }
 
       span {
@@ -1288,12 +1294,12 @@ body {
   width: 40vw;
   height: 60vh;
   background: linear-gradient(#898484, #423939, #484848, #615d5c);
-  border-radius: 20px;
+  border-radius: 3vh;
   border-top: 1vh ridge rgb(130, 127, 127);
   border-left: 1vh groove rgb(130, 127, 127);
   border-right: 1vh ridge rgb(130, 127, 127);
   border-bottom: 1vh groove rgb(130, 127, 127);
-  box-shadow: inset 0px 0px 5px 3px rgba(1, 1, 1, 0.3);
+  box-shadow: inset 0px 0px 0.8vh 0.5vh rgba(1, 1, 1, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1315,7 +1321,7 @@ body {
     margin: 0;
     margin-top: -5%;
     margin-bottom: 0%;
-    text-shadow: 0px 15px 7px black;
+    text-shadow: 0px 2.5vh 0.3vh black;
   }
 
   .score {
@@ -1338,11 +1344,11 @@ body {
     z-index: 1;
 
     &:hover {
-      box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0 0.3vh 0.3vh rgba(255, 255, 255, 0.2);
     }
 
     &:active {
-      box-shadow: 0px 0 3px 3px rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 0 0.3vh 0.3vh rgba(255, 255, 255, 0.2);
       color: grey;
     }
   }
@@ -1418,7 +1424,6 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-
   }
 
   .win {
@@ -1464,7 +1469,7 @@ body {
       line-height: 5vh;
       font-size: 5vh;
       font-weight: 600;
-      border: 1px solid #cb0000;
+      border: 0.3vh solid #cb0000;
       background-image: linear-gradient(-180deg, #cb0000 0%, #9b0808 100%);
       box-shadow: 0 1rem 1.25rem 0 rgba(122, 7, 5, 0.5),
         0 -0.25rem 1.5rem rgb(145, 22, 3) inset,
@@ -1666,7 +1671,7 @@ body {
   flex-direction: column;
   background-image: url('./img/treasure-back.jpg');
   animation: pop-up 10s linear 1;
-  border-radius: 25px;
+  border-radius: 4vh;
   border-top: 1.5vh ridge #ffb000;
   border-left: 1.5vh groove #ffb000;
   border-right: 1.5vh ridge #ffb000;
