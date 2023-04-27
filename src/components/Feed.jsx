@@ -29,7 +29,7 @@ const Feed = () => {
           allow="autoplay; fullscreen; vr"
           muted
           height="100%"
-          width="100%"
+          width="120%"
           src="https://sketchfab.com/models/f709acd09d9640698bfc5baa14f30fe9/embed?autostart=1"
         />
       </div>

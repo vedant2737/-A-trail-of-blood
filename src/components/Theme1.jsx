@@ -15,7 +15,8 @@ const message = "Your objective is to find specific items hidden in this constru
 const Win = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext)
-  const { score, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { score, setNum,unlock,setUnlock, setFoundEle, setStage } = useContext(ScoreContext)
+  if (unlock < 2) setUnlock(2);
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
@@ -34,17 +35,7 @@ const Win = () => {
       <div className='win-box'>
         <div className='container'>
           <div className="sketchfab-embed-wrapper game">
-            <iframe
-              title="My 3D Model"
-              frameBorder="0"
-              allow="autoplay; fullscreen; vr"
-              muted
-              height="100%"
-              width="120%"
-              src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
-            // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
-            />
-          </div>
+           </div>
         </div>
         <p className='win'>You Win</p>
         <p className='level'>Level 1 Completed</p>

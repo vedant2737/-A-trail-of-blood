@@ -107,6 +107,7 @@ const Register = ({ popup = false, handleClick1 }) => {
             });
             setShow(!show);
             setStage("stages")
+            window.location.reload();
             }
             catch(e){
                 setErr("Something went Wrong.")

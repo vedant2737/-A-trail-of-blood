@@ -14,8 +14,9 @@ const message = "I am glad to hear that you have recovered from your injuries. N
 
 const Win = () => {
   const navigate = useNavigate();
-  const { score, setFoundEle, setNum, setStage } = useContext(ScoreContext)
+  const { score, unlock,setUnlock, setFoundEle, setNum, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
+  if (unlock < 4) setUnlock(4);
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
@@ -34,16 +35,6 @@ const Win = () => {
       <div className='win-box'>
         <div className='container'>
         <div className="sketchfab-embed-wrapper game">
-          <iframe
-            title="My 3D Model"
-            frameBorder="0"
-            allow="autoplay; fullscreen; vr"
-            muted
-            height="120%"
-            width="120%"
-            src="https://sketchfab.com/models/8e3ffbeea4934eeb981808be0853d4bb/embed?autostart=1"
-          // src="https://sketchfab.com/models/feec89011d1642a697f3f6c286397c08/embed?autostart=1"
-          />
         </div>
         </div>
         <p className='win'>You Win</p>

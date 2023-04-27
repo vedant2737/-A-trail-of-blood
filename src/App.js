@@ -24,25 +24,6 @@ class ErrorBoundary extends Component {
 }
 
 function App() {
-  // const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 1200) {
-  //       setIsSmallScreen(true);
-  //     } else {
-  //       setIsSmallScreen(false);
-  //     }
-  //   };
-
-  //   window.addEventListener('resize', handleResize);
-  //   handleResize(); 
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
-
-  // if (isSmallScreen) {
-  //   return <h2>Sorry, This website is not responsive, tihs is a desktop based game ,Please open it in desktop for best experience.</h2>;
-  // }
   return (
     <>  
       
