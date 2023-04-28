@@ -119,7 +119,7 @@ const Theme1 = () => {
         if (timer == 6) { setCRed("c-red") }
         setTimer(timer - 1);
       } else {
-        if (k) {
+        if (k){
           setLose(true)
           setNum(0);
           setFoundEle([]);
@@ -196,7 +196,7 @@ const Theme1 = () => {
         <div>{clue4 ? <span>4</span> : <img className="tool-box" src={toolBox} alt="." />}</div>
       </div>
       <div className='clue-box'>
-        <div className='timer'><span className={cRed}>{timer}</span></div>
+        <div className='timer'><span className={`theme1 ${cRed}`}>{timer}</span></div>
         <div className='clues'>
           <button>{clue1 && <span>Hammer</span>}</button>
           <button>{clue2 && <span>Helmet</span>}</button>

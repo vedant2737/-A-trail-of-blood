@@ -404,13 +404,13 @@ body{
     width: 15% !important;
     background-image: url(./img/back2.jpg) !important;
     span {
-      color: rgb(186, 185, 185) !important;
+      color: rgb(186, 185, 185);
     }
   }
   .timer3{
     background-image: url(./img/back.jpg) !important;
     span {
-      color: rgb(216, 191, 128) !important;
+      color: rgb(216, 191, 128);
     }
   }
 
@@ -583,9 +583,11 @@ body{
       font-size: 8.2vh;
       font-weight: bold;
       font-family: "Chiller";
+      
+    }
+    .theme1{
       color: rgb(253, 244, 238);
     }
-
     .score {
       font-size: 5vh !important;
     }
@@ -633,6 +635,7 @@ body{
       background:black;
       background-size: cover;
       height: 106vh;
+      width:160vw;
       margin-top:-10vh;
     }
   }
