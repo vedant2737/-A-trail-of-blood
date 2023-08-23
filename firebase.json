@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "bloody-trail",
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
