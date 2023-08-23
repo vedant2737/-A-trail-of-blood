@@ -83,7 +83,7 @@ const Profile = () => {
                                 {
                                     allUsers?.sort((a, b) => b?.maxScore - a?.maxScore).map(User => {
                                         return (
-                                            <UserView user={User} />
+                                            <UserView key={user} user={User} />
                                         )
                                     })
                                 }

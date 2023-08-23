@@ -217,6 +217,190 @@ body{
   }
 }
 
+.Theme1 {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -5vh;
+  animation: show 5s 0s 1;
+
+  .back {
+    background-image: url('https://i.pinimg.com/originals/ab/20/47/ab20472dd2864bcf048200c098e739c9.jpg');
+    background-size: 100% 100%;
+    width: 120vw;
+    height: 160vh;
+  }
+
+  .clue-back {
+    .hammer {
+      position: absolute;
+      width: 10vw !important;
+      height: 30vh !important;
+      left: 24vw;
+      top: 75vh;
+      transform: rotate(-90deg);
+      filter: brightness(40%);
+    }
+
+    .helmet {
+      width: 12vw;
+      height: 18.5vh;
+      position: absolute;
+      filter: brightness(50%);
+      top: 20vh;
+      left: 105vw;
+    }
+
+    .saw {
+      width: 17vw;
+      height: 16vh;
+      position: absolute;
+      filter: brightness(65%);
+      top: 61vh;
+      left: 50vw;
+    }
+
+    .tool-box {
+      width: 15vw;
+      height: 10vw;
+      position: absolute;
+      left: -1vw;
+      top: 72vh;
+      transform: rotate(-10deg);
+      filter: brightness(20%);
+    }
+
+    .blood-written {
+      position: absolute;
+      width: 13vw;
+      filter: brightness(70%);
+      opacity: 60%;
+      top: 21vh;
+      left: 30vw;
+    }
+  }
+}
+
+.box {
+  height: fit-content;
+  width: fit-content;
+  position: fixed;
+  top: 0.5vh;
+  left: calc(50% - 34vh);
+  display: flex;
+
+  div {
+    height: 14vh;
+    width: 14vh;
+    padding: 1.75vh;
+    margin: 0.7vh;
+    border: 1.3vh solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back31.jpg);
+    background-color: rgb(79, 3, 3);
+
+    img {
+      width: 15vh;
+    }
+
+    .hammer {
+      width: 10vh;
+      object-fit: cover;
+    }
+
+    .helmet {
+      height: 12vh;
+      margin-right: -20px;
+      margin-top: -10px;
+      object-fit: cover;
+    }
+
+    .saw {
+      height: 5.8vh;
+      object-fit: cover;
+    }
+
+    span {
+      font-size: 8vh;
+      font-weight: bold;
+      font-family: "Chiller";
+      color: rgb(253, 244, 238);
+    }
+  }
+}
+
+.clue-box {
+  width: 100%;
+  height: 18vh;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+
+  .timer {
+    height: 16.5vh;
+    width: 12.5%;
+    margin: 0.8vh;
+    border: 1.5vh solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/back31.jpg);
+
+    span {
+      font-size: 8.2vh;
+      font-weight: bold;
+      font-family: "Chiller";
+      
+    }
+    .theme1{
+      color: rgb(253, 244, 238);
+    }
+    .score {
+      font-size: 5vh !important;
+    }
+  }
+
+  .clues {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+
+    button {
+      width: 24%;
+      padding: 1%;
+      height: 7vh;
+      border: none;
+      border-radius: 5vh;
+      box-sizing: border-box;
+      opacity: 100%;
+      background-image: url(./img/back31.jpg);
+      border: 0.5vh solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        color: rgb(253, 244, 238);
+        font-size: 3.3vh;
+        font-weight: bold;
+        font-family: "Chiller";
+        letter-spacing: 0.3vh;
+        opacity: 100%;
+      }
+    }
+  }
+}
+
 .Theme3 {
   height: 100vh;
   width: 100vw;
@@ -437,190 +621,6 @@ body{
       border:0.5vh solid rgb(216, 191, 128) !important;
       span {
         color: rgb(216, 191, 128) !important;
-      }
-    }
-  }
-}
-
-.Theme1 {
-  width: 100vw;
-  height: 100vh;
-  margin-top: -5vh;
-  animation: show 5s 0s 1;
-
-  .back {
-    background-image: url('https://i.pinimg.com/originals/ab/20/47/ab20472dd2864bcf048200c098e739c9.jpg');
-    background-size: 100% 100%;
-    width: 120vw;
-    height: 160vh;
-  }
-
-  .clue-back {
-    .hammer {
-      position: absolute;
-      width: 10vw !important;
-      height: 30vh !important;
-      left: 24vw;
-      top: 75vh;
-      transform: rotate(-90deg);
-      filter: brightness(40%);
-    }
-
-    .helmet {
-      width: 12vw;
-      height: 18.5vh;
-      position: absolute;
-      filter: brightness(50%);
-      top: 20vh;
-      left: 105vw;
-    }
-
-    .saw {
-      width: 17vw;
-      height: 16vh;
-      position: absolute;
-      filter: brightness(65%);
-      top: 61vh;
-      left: 50vw;
-    }
-
-    .tool-box {
-      width: 15vw;
-      height: 10vw;
-      position: absolute;
-      left: -1vw;
-      top: 72vh;
-      transform: rotate(-10deg);
-      filter: brightness(20%);
-    }
-
-    .blood-written {
-      position: absolute;
-      width: 13vw;
-      filter: brightness(70%);
-      opacity: 60%;
-      top: 21vh;
-      left: 30vw;
-    }
-  }
-}
-
-.box {
-  height: fit-content;
-  width: fit-content;
-  position: fixed;
-  top: 0.5vh;
-  left: calc(50% - 34vh);
-  display: flex;
-
-  div {
-    height: 14vh;
-    width: 14vh;
-    padding: 1.75vh;
-    margin: 0.7vh;
-    border: 1.3vh solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back31.jpg);
-    background-color: rgb(79, 3, 3);
-
-    img {
-      width: 15vh;
-    }
-
-    .hammer {
-      width: 10vh;
-      object-fit: cover;
-    }
-
-    .helmet {
-      height: 12vh;
-      margin-right: -20px;
-      margin-top: -10px;
-      object-fit: cover;
-    }
-
-    .saw {
-      height: 5.8vh;
-      object-fit: cover;
-    }
-
-    span {
-      font-size: 8vh;
-      font-weight: bold;
-      font-family: "Chiller";
-      color: rgb(253, 244, 238);
-    }
-  }
-}
-
-.clue-box {
-  width: 100%;
-  height: 18vh;
-  position: fixed;
-  display: flex;
-  bottom: 0;
-
-  .timer {
-    height: 16.5vh;
-    width: 12.5%;
-    margin: 0.8vh;
-    border: 1.5vh solid black;
-    border-radius: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(./img/back31.jpg);
-
-    span {
-      font-size: 8.2vh;
-      font-weight: bold;
-      font-family: "Chiller";
-      
-    }
-    .theme1{
-      color: rgb(253, 244, 238);
-    }
-    .score {
-      font-size: 5vh !important;
-    }
-  }
-
-  .clues {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 75%;
-
-    button {
-      width: 24%;
-      padding: 1%;
-      height: 7vh;
-      border: none;
-      border-radius: 5vh;
-      box-sizing: border-box;
-      opacity: 100%;
-      background-image: url(./img/back31.jpg);
-      border: 0.5vh solid black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      span {
-        color: rgb(253, 244, 238);
-        font-size: 3.3vh;
-        font-weight: bold;
-        font-family: "Chiller";
-        letter-spacing: 0.3vh;
-        opacity: 100%;
       }
     }
   }
@@ -907,7 +907,6 @@ body{
           filter: drop-shadow(0 0.4vh 0.4vh rgb(102, 32, 0));
         }
       }
-
     }
 
     .leader-board::-webkit-scrollbar-thumb {

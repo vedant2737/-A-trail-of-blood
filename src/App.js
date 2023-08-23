@@ -41,7 +41,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-      <Profile />
+        <Profile />
     </ErrorBoundary>
     </>
   );

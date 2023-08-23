@@ -11,7 +11,6 @@ const message = "In the room you have entered, there are three boxes. Inside one
 
 const Win = () => {
   const navigate = useNavigate();
-  const { user,setUser } = useContext(UserContext)
   const { setScore,setUnlock,setStage} = useContext(ScoreContext)
   const handleHomeClick = () => {
     setStage("stages");

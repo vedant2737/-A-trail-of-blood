@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import cross from '../img/cross.png'
 import defaultUserImage from '../img/defautUserImage.webp'
-import Add from "../img/boy.jpg"
-import Check from "../img/boy.jpg"
 import Register from './Register'
-import { signInWithEmailAndPassword, signOut } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase'
 
 const Login = ({popup=false,setLogin}) => {
     const [show, setShow] = useState(popup)
     const [err, setErr] = useState("");
-    const [pic, setPic] = useState("");
     const [register, setRegister] = useState(false);
 
     const handleClick = () => {
@@ -27,13 +24,13 @@ const Login = ({popup=false,setLogin}) => {
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
-
+         
        try{    
           await signInWithEmailAndPassword(auth, email, password);
           if(setLogin){setLogin(false);}
           setShow(!show)
        } catch(err){
-          setErr("Something Went Wrong.")
+          setErr(err.message)
        }
     }
 

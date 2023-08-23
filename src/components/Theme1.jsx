@@ -203,9 +203,9 @@ const Theme1 = () => {
           <button>{clue3 && <span>Saw</span>}</button>
           <button>{clue4 && <span>Tool Kit</span>}</button>
         </div>
-        <div className='timer'>
-          <span className="score">Score : </span>
-          <span className='score'>{score}</span>
+        <div className='timer '>
+          <span className="theme1 score">Score : </span>
+          <span className='theme1 score'>{score}</span>
         </div>
       </div>
       <div className='lives'>

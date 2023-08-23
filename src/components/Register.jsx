@@ -4,7 +4,7 @@ import Add from "../img/boy.jpg"
 import Check from "../img/boy.jpg"
 import defaultUserImage from '../img/defautUserImage.webp'
 import Login from './Login'
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from '../firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
@@ -22,7 +22,7 @@ const Register = ({ popup = false, handleClick1 }) => {
 
     const handleClick = () => {
         setShow(!show)
-        if (handleClick1) {
+        if (handleClick1){
             handleClick1();
         }
     }
@@ -33,43 +33,42 @@ const Register = ({ popup = false, handleClick1 }) => {
         const file = e.target[0]?.files[0];
         const displayName = e.target[1].value;
         const email = e.target[2].value;
-        const password = e.target[3].value;
-        const confirmPassword = e.target[4].value;
+        const password = e?.target[3]?.value;
+        const confirmPassword = e?.target[4]?.value;
         if (password !== confirmPassword) {
             setErr("Password should match."); return;
         }
-
         try {
             const res = await createUserWithEmailAndPassword(auth, email, password)
+            console.log(res)
             const storageRef = ref(storage, email);
-
-            if (file) {
+            console.log(storageRef);
+ 
+            if (file){
                 await uploadBytesResumable(storageRef, file).then(() => {
                     getDownloadURL(storageRef).then(async (downloadURL) => {
-                        try {
-                            await updateProfile(res.user, {
+                         try{
+                             await updateProfile(res.user,{
                                 displayName,
-                                photoURL: downloadURL,
-                            });
-                            await setDoc(doc(db, "users", res.user.uid), {
-                                uid: res.user.uid,
+                                photoUrl:downloadURL
+                             })
+                             await setDoc(doc(db,"users",res.user.uid),{
+                                uid:res.user.uid,
+                                photoUrl:downloadURL,
+                                maxScore:0,
+                                totalCoins:0,
                                 displayName,
-                                email,
-                                gender: gender,
-                                photoURL: downloadURL,
-                                maxScore: 0,
-                                totalCoins: 0,
+                                gender:gender,
+                                email:email,
                                 matchPlayed: 0,
                                 winGames: 0
-                            })
-                        }
-                        catch (err) {
-                            setErr("Something went Wrong.")
+                             })
+                         }
+                         catch(e){
+                            setErr(e.message)
                             console.log(err)
-                            setTimeout(() => {
-                                setErr("")
-                            }, 2000);
-                        }
+                         }
+                        
                     });
                 });
             }
@@ -78,6 +77,7 @@ const Register = ({ popup = false, handleClick1 }) => {
                     await updateProfile(res.user, {
                         displayName,
                     });
+
                     await setDoc(doc(db, "users", res.user.uid), {
                         uid: res.user.uid,
                         displayName,
@@ -89,7 +89,7 @@ const Register = ({ popup = false, handleClick1 }) => {
                         winGames: 0
                     })
                 } catch (err) {
-                    setErr("Something went Wrong.")
+                    setErr(e.message)
                     console.log(err)
                     setTimeout(() => {
                         setErr("")
@@ -110,15 +110,17 @@ const Register = ({ popup = false, handleClick1 }) => {
             window.location.reload();
             }
             catch(e){
-                setErr("Something went Wrong.")
+                setErr(e.message)
             }
             
         }
         catch (err) {
-            setErr("Something went Wrong")
+            setErr(err.message)
             console.log(err)
         }
     }
+     
+
     return (
         <>
             <div className='Register'>
@@ -136,18 +138,18 @@ const Register = ({ popup = false, handleClick1 }) => {
                                     setPic(e.target?.value);
                                 }} />
                             <label htmlFor="file">
-                                {(pic == "") && <img src={Add} alt="" />}
-                                {(pic != "") && <img src={Check} alt="" />}
-                                <span style={{ color: (pic != "") ? 'green' : 'rgb(175, 175, 175)', wordBreak: 'break-all', position: 'relative' }}>{(pic != "") ? "Selected" : "Add an avtar"}</span>
+                                {(pic === "") && <img src={Add} alt="" />}
+                                {(pic !== "") && <img src={Check} alt="" />}
+                                <span style={{ color: (pic !== "") ? 'green' : 'rgb(175, 175, 175)', wordBreak: 'break-all', position: 'relative' }}>{(pic != "") ? "Selected" : "Add an avtar"}</span>
                             </label>
-                            <input type='text' required placeholder="Avatar name" />
-                            <input type='email' required placeholder="Email" />
-                            <input type='password' required placeholder="Password" />
-                            <input type='password' required placeholder="Confirm Password" />
+                            <input type='text'  placeholder="Avatar name" />
+                            <input type='email'  placeholder="Email" />
+                            <input type='password'  placeholder="Password" />
+                            <input type='password'  placeholder="Confirm Password" />
                             <div id="gender">
-                                <input id="male" type="radio" name="gender" value="male" required onChange={(e) => { setGender(e.target.value) }} />
+                                <input id="male" type="radio" name="gender" value="male" onChange={(e) => { setGender(e.target.value) }} />
                                 <label htmlFor="male">Male</label>
-                                <input id="female" type="radio" name="gender" value="female" required onChange={(e) => { setGender(e.target.value) }} />
+                                <input id="female" type="radio" name="gender" value="female" onChange={(e) => { setGender(e.target.value) }} />
                                 <label htmlFor="female">Female</label>
                             </div>
                             <button>Sign Up</button>
