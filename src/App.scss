@@ -888,6 +888,9 @@ body{
             margin-left: 3vh;
             font-family: "Chiller";
           }
+          .fff{
+            color:white !important;
+          }
         }
 
         padding: 1vh 4vh;
@@ -927,13 +930,14 @@ body{
     }
   }
 }
-
+.z-2{
+  z-index:2;
+}
 .Register {
   position: fixed;
   right: 0;
   top: 0;
   transition: all 3s;
-
   button {
     font-family: "Chiller";
     position: relative;
@@ -968,8 +972,10 @@ body{
   .top {
     height: 40% !important;
   }
+ 
 
   .register {
+    z-index: 10;
     width: 30vw;
     height: 86vh;
     position: absolute;
@@ -1081,6 +1087,8 @@ body{
         background-color: #cb0000;
         color: white;
         border: none;
+        top:0;
+        right:0;
         border-radius: 0;
         width: 40%;
         height: 8vh;
@@ -1089,6 +1097,25 @@ body{
         letter-spacing: 0.8vh;
         font-size: 3.5vh;
         cursor: pointer;
+      }
+      .disabled-btn {
+        font-family: "Chiller";
+        position: relative;
+        // right: 1vw;
+        margin-top: 1vw;
+        background-color: #a4a3a3;
+        color: rgb(74, 72, 72);
+        border: none;
+        border-radius: 0;
+        width: 35%;
+        height: 5vh;
+        padding: 1.5vh;
+        font-weight: bold;
+        letter-spacing: 0.8vh;
+        font-size: 3.5vh;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: inset 0px 0px 0.8vh 0.5vh rgb(0,0,0,0.3);
       }
       span{
         color:#cb0000;

@@ -96,7 +96,6 @@ const Theme3 = () => {
   const [wrong, setWrong] = useState(false)
   const [show, setShow] = useState(false)
   const [msg, setMsg] = useState(true)
-  const [findNo, setFindNo] = useState(0)
   const [win, setWin] = useState(false)
   const [lose, setLose] = useState(false)
   const [timer, setTimer] = useState(0)
@@ -123,7 +122,7 @@ const Theme3 = () => {
   useEffect(() => {
     const time = setInterval(() => {
       if (timer > 0) {
-        if (timer == 6) { setCRed("c-red") }
+        if (timer === 6) { setCRed("c-red") }
         setTimer(timer - 1);
       } else {
         if(k){
@@ -150,24 +149,24 @@ const Theme3 = () => {
     if(foundEle.length<num)k=foundEle.length;
     for (let i = 0; i < k; i++) {
       let no = foundEle[i];
-      if (no == 1) { setClue1(false); }
-      else if (no == 2) { setClue2(false); }
-      else if (no == 3) { setClue3(false); }
-      else if (no == 4) { setClue4(false); }
-      else if (no == 5) { setClue5(false); }
-      else if (no == 6) { setClue6(false); }
+      if (no === 1) { setClue1(false); }
+      else if (no === 2) { setClue2(false); }
+      else if (no === 3) { setClue3(false); }
+      else if (no === 4) { setClue4(false); }
+      else if (no === 5) { setClue5(false); }
+      else if (no === 6) { setClue6(false); }
     }
   }, []);
 
   const handleClick = (no, e) => {
-    if (no == 0) { if (lives == 1) { setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 }); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
-    else if (no == 1) { setClue1(false); }
-    else if (no == 2) { setClue2(false); }
-    else if (no == 3) { setClue3(false); }
-    else if (no == 4) { setClue4(false); }
-    else if (no == 5) { setClue5(false); }
-    else if (no == 6) { setClue6(false); }
-    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num == 5) { setFoundEle([]); setNum(0); setWin(true); if (unlock < 4) setUnlock(4); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
+    if (no === 0){ if (lives === 1) { setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 }); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
+    else if (no === 1) { setClue1(false); }
+    else if (no === 2) { setClue2(false); }
+    else if (no === 3) { setClue3(false); }
+    else if (no === 4) { setClue4(false); }
+    else if (no === 5) { setClue5(false); }
+    else if (no === 6) { setClue6(false); }
+    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num === 5) { setFoundEle([]); setNum(0); setWin(true); if (unlock < 4) setUnlock(4); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
   }
 
   const handleMsgClick=()=>{

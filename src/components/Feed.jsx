@@ -49,7 +49,7 @@ const Feed = () => {
           <span>l</span>
       </div>
       <button className="button" onClick={handleClick}><span>PLAY GAME</span></button>
-      {login && <Login popup={login} setLogin={setLogin}/>}
+      <Login popup={login} setLogin={setLogin}/>
     </div>
   )
 }

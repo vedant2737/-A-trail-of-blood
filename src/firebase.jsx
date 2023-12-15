@@ -2,16 +2,16 @@ import { initializeApp } from "firebase/app";
 import { getAuth} from "firebase/auth";
 import { getStorage} from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
-    // databaseURL: "https://bloody-trail-default-rtdb.firebaseio.com",
-    apiKey: "AIzaSyDX6UiV5onuw4X5vQ7GfOaUmNE96HaCAdE",
-    authDomain: "bloody-trail-dd6b8.firebaseapp.com",
-    projectId: "bloody-trail-dd6b8",
-    storageBucket: "bloody-trail-dd6b8.appspot.com",
-    messagingSenderId: "630199282841",
-    appId: "1:630199282841:web:14a6adadbdd20f4b2f1c08",
-    measurementId: "G-85S70C1JCR"
-  };
+  apiKey: "AIzaSyBn8d47PzOG8tbLggjZ0xxZlFawZ8V3U04",
+  authDomain: "bloody-trail-f261d.firebaseapp.com",
+  projectId: "bloody-trail-f261d",
+  storageBucket: "bloody-trail-f261d.appspot.com",
+  messagingSenderId: "147799660061",
+  appId: "1:147799660061:web:1bf0bb7e1b0628a7fbd8f4",
+  measurementId: "G-M43J4ERX2V"
+};
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();

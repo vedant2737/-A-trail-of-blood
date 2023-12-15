@@ -23,6 +23,7 @@ export const ScoreContextProvider = ({ children }) => {
                 querySnapshot.forEach((doc) => {
                     setuser = doc.data();
                 });
+                if(!setuser) return; 
                 setLastGame(setuser)
                 setScore(setuser.score)
                 setUnlock(setuser.unlock)
@@ -31,7 +32,6 @@ export const ScoreContextProvider = ({ children }) => {
                 setNum(setuser.num)
             } catch (err) {
                 console.log(err)
-                console.log("something Went Wrong")
             }
         };
         currentUser?.uid && getUserData();
