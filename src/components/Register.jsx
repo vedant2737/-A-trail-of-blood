@@ -4,21 +4,19 @@ import Add from "../img/boy.jpg"
 import Check from "../img/boy.jpg"
 import defaultUserImage from '../img/defautUserImage.webp'
 import Login from './Login'
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, storage, db } from '../firebase';
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { doc, setDoc } from "firebase/firestore";
 import { UserContext } from '../context/UserContext'
 import { ScoreContext } from '../context/ScoreContext'
 import { CircularProgress } from '@mui/material'
+import axios from 'axios'
 
 const Register = ({ popup = false, handleClick1 }) => {
-    const { currentUser } = useContext(UserContext)
+    const { setUser ,setCurrentUser} = useContext(UserContext)
     const {setStage} = useContext(ScoreContext)
     const [show, setShow] = useState(popup)
     const [gender, setGender] = useState("");
     const [err, setErr] = useState("");
     const [pic, setPic] = useState("");
+    const [imageData, setImageData] = useState(null);
     const [login, setLogin] = useState(false);
     const [loading,setLoading] = useState(false);
     const handleClick = () => {
@@ -41,110 +39,44 @@ const Register = ({ popup = false, handleClick1 }) => {
         }
 
         setLoading(true);
-
         try {
-            const res = await createUserWithEmailAndPassword(auth, email, password)
-            if (file){
-                const storageRef = ref(storage, email);
-                await uploadBytesResumable(storageRef, file).then(() => {
-                    getDownloadURL(storageRef).then(async (downloadURL) => {
-                         try{
-                             await updateProfile(res.user,{
-                                displayName,
-                                photoUrl:downloadURL
-                             })
-                             
-                             try{
-                              await setDoc(doc(db, "users", res.user.uid), {
-                                 photoUrl:downloadURL,
-                                 uid: res.user.uid,
-                                 displayName,
-                                 email,
-                                 gender: gender,
-                                 maxScore: 0,
-                                 totalCoins: 0,
-                                 matchPlayed: 0,
-                                 winGames: 0
-                             })
-                            }
-                            catch(e){
-                                setErr("("+err.message.substr(22))
-                                setTimeout(() => {
-                                    setErr("");
-                                }, 2000);
-                            }
-                         }
-                         catch(e){
-                            setErr("("+err.message.substr(22))
-                            setTimeout(() => {
-                                setErr("");
-                            }, 2000);
-                         }
-                        
-                    });
+                const userData = {
+                    displayName,
+                    email,
+                    gender: gender,
+                    maxScore: 0,
+                    totalCoins: 0,
+                    matchPlayed: 0,
+                    winGames: 0,
+                    score: 0,
+                    level: 1,
+                    foundEle: [],
+                    num:0,
+                    stage:"stages",
+                    photoUrl:file
+                }
+                const newUser = new FormData();
+                Object.entries(userData).forEach(([key, value]) => {
+                    newUser.append(key, value);
+                  });
+                console.log(newUser);
+                const response = await axios.post("http://localhost:8080/users/add",newUser,{
+                 headers: {
+                    'Content-Type': 'multipart/form-data',
+                  }
                 });
-            }
-            else {
-                try {
-                    await updateProfile(res.user, {
-                        displayName,
-                    });
-
-                    try{
-                    await setDoc(doc(db, "users", res.user.uid), {
-                        uid: res.user.uid,
-                        displayName,
-                        email,
-                        gender: gender,
-                        maxScore: 0,
-                        totalCoins: 0,
-                        matchPlayed: 0,
-                        winGames: 0
-                    })
+                setStage("stages")
+                setUser(userData);
+                setCurrentUser(userData);
                 }
                 catch (err) {
-                    setErr("("+err.message.substr(22))
+                    setErr(err.message)
                     setTimeout(() => {
                         setErr("");
                     }, 2000);
+                    console.log(err)
                 }
-                } catch (err) {
-                    setErr("("+err.message.substr(22))
-                    setTimeout(() => {
-                        setErr("");
-                    }, 2000);
-                }
-            }
-
-            try{
-            await setDoc(doc(db, "lastGame", res.user.uid), {
-                uid: res.user.uid,
-                stage: "stages",
-                score: 0,
-                unlock: 1,
-                foundEle: [],
-                num:0
-            });
-            setShow(!show);
-            setStage("stages")
-            window.location.reload();
-            }
-            catch(e){
-                setErr("("+err.message.substr(22))
-                setTimeout(() => {
-                    setErr("");
-                  }, 2000);
-            }
-            
-        }
-        catch (err) {
-            setErr("("+err.message.substr(22))
-            setTimeout(() => {
-                setErr("");
-              }, 2000);
-            console.log(err)
-        }
-        setLoading(false);
+                setLoading(false);
     }
      
 

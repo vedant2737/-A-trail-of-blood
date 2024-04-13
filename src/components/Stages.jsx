@@ -15,7 +15,7 @@ const Stages = () => {
   const [show, setShow] = useState(false)
   const [instructions, setInstructions] = useState(false)
   const { currentUser } = useContext(UserContext)
-  const { score, unlock, setUnlock, setStage, stage } = useContext(ScoreContext)
+  const { score, level, setLevel, setStage, stage } = useContext(ScoreContext)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,10 +30,10 @@ const Stages = () => {
   }, [currentUser])
 
   useEffect(() => {
-    if (unlock >= 2) { setLock2(false) }
-    if (unlock >= 3) { setLock3(false) }
-    if (unlock >= 4) { setLock4(false) }
-  }, [unlock])
+    if (level >= 2) { setLock2(false) }
+    if (level >= 3) { setLock3(false) }
+    if (level >= 4) { setLock4(false) }
+  }, [level])
 
   const handleMsgClick = () => {
     setInstructions(!instructions);
@@ -56,10 +56,10 @@ const Stages = () => {
           </div>
           <div className='stages'>
             <div onClick={() => { setStage("theme1"); navigate("/theme1"); }} className='theme1 border'><div><img src={border} alt="." /></div></div>
-            <div onClick={() => { if (unlock >= 2) setStage("theme2"); navigate("/theme2") }} className={`theme2 border ${lock2 ? "dark" : ""}`}><div><img src={border} alt="." />{lock2 && <img className="lock" src={lock} alt="." />}</div></div>
-            <div onClick={() => { if (unlock >= 3) setStage("theme3"); navigate("/theme3") }} className={`theme3 border ${lock3 ? "dark" : ""}`}><div><img src={border} alt="." />{lock3 && <img className="lock" src={lock} alt="." />}</div></div>
-            <div onClick={() => { if (unlock >= 4) setStage("theme4"); navigate("/theme4") }} className={`theme4 border ${lock4 ? "dark" : ""}`}><div><img src={border} alt="." />{lock4 && <img className="lock" src={lock} alt="." />}</div></div>
-            <button className='start' onClick={() => { setUnlock(1); setStage("theme1"); navigate("/theme1") }}><span>START</span></button>
+            <div onClick={() => { if (level >= 2) setStage("theme2"); navigate("/theme2") }} className={`theme2 border ${lock2 ? "dark" : ""}`}><div><img src={border} alt="." />{lock2 && <img className="lock" src={lock} alt="." />}</div></div>
+            <div onClick={() => { if (level >= 3) setStage("theme3"); navigate("/theme3") }} className={`theme3 border ${lock3 ? "dark" : ""}`}><div><img src={border} alt="." />{lock3 && <img className="lock" src={lock} alt="." />}</div></div>
+            <div onClick={() => { if (level >= 4) setStage("theme4"); navigate("/theme4") }} className={`theme4 border ${lock4 ? "dark" : ""}`}><div><img src={border} alt="." />{lock4 && <img className="lock" src={lock} alt="." />}</div></div>
+            <button className='start' onClick={() => { setLevel(1); setStage("theme1"); navigate("/theme1") }}><span>START</span></button>
           </div>
           <div className='Score'>
             <span >Score</span>

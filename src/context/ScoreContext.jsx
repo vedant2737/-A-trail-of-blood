@@ -1,59 +1,80 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { UserContext } from "./UserContext";
-import {  db } from "../firebase";
-import { collection, doc, getDocs, query, updateDoc, where } from "firebase/firestore";
 
 export const ScoreContext = createContext();
 export const ScoreContextProvider = ({ children }) => {
-    const { currentUser,user } = useContext(UserContext)
+    const { currentUser,user,setUser } = useContext(UserContext)
     const [score, setScore] = useState(0);
-    const [unlock, setUnlock] = useState(1);
+    const [level, setLevel] = useState(1);
     const [foundEle, setFoundEle] = useState([]);
     const [ stage, setStage ] = useState("stages");
     const [ num, setNum ] = useState(0);
-    const [ lastGame, setLastGame ] = useState();
+    const [ maxScore, setMaxScore ] = useState(0);
+    const [ matchPlayed, setMatchPlayed ] = useState(0);
+    const [ totalCoins, setTotalCoins ] = useState(0);
+    const [ winGames, setWinGames ] = useState(0);
 
     useEffect(() => {
-        const getUserData = async () => {
-            const q = query(collection(db, "lastGame"), where("uid", "==", currentUser?.uid));
-            try {
-                const querySnapshot = await getDocs(q);
-                if (querySnapshot.empty) { console.log("empty"); setLastGame({}); }
-                let setuser = {};
-                querySnapshot.forEach((doc) => {
-                    setuser = doc.data();
-                });
-                if(!setuser) return; 
-                setLastGame(setuser)
-                setScore(setuser.score)
-                setUnlock(setuser.unlock)
-                setStage(setuser.stage)
-                setFoundEle(setuser.foundEle)
-                setNum(setuser.num)
-            } catch (err) {
-                console.log(err)
+            if(currentUser){
+                setScore(currentUser.score)
+                setLevel(currentUser.level)
+                setStage(currentUser.stage)
+                setFoundEle(currentUser.foundEle)
+                setNum(currentUser.num)
+                setMaxScore(currentUser.maxScore)
+                setMatchPlayed(currentUser.matchPlayed)
+                setTotalCoins(currentUser.totalCoins)
+                setWinGames(currentUser.winGames)
             }
-        };
-        currentUser?.uid && getUserData();
-    }, [currentUser,user])
-    useEffect(() => {
-        const getUserData = async () => {
-            await updateDoc(doc(db, "lastGame", currentUser?.uid), {
-                foundEle:lastGame.foundEle,
-                num:lastGame.num,
-                score:lastGame.score,
-                stage:lastGame.stage,
-                unlock:lastGame.unlock,
-            }) 
-        }
-        lastGame && getUserData();
-    }, [lastGame])
+    },[currentUser])
 
     useEffect(()=>{
-      setLastGame({...lastGame,score:score,unlock:unlock,foundEle:foundEle,stage:stage,num:num});
-    },[unlock,score,foundEle,stage,num])
+        const updateUser = (obj)=>{
+                fetch(`http://localhost:8080/users/update`, {
+                    method: 'PUT',
+                    headers: {
+                      'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(obj),
+                  })
+                   .then(response => response.json())
+                    .then(updatedUser => {
+                        console.log('User updated successfully:', updatedUser);
+                    })
+                    .catch(error => {
+                        console.error('Error updating user:', error);                
+                    });
+            
+        }
+        if(user){
+            const obj = {...user,
+                score:score,
+                level:level,
+                foundEle:foundEle,
+                stage:stage,
+                num:num,
+                maxScore:maxScore,
+                matchPlayed:matchPlayed,
+                totalCoins:totalCoins,
+                winGames:winGames
+            };
+                updateUser(obj);
+                setUser(obj);
+        }
+    },[level,score,foundEle,stage,num,maxScore,matchPlayed,totalCoins,winGames])
+
     return (
-        <ScoreContext.Provider value={{ score, setScore, unlock, setUnlock,foundEle,setFoundEle,stage,setStage,num,setNum,lastGame, setLastGame }}>
+        <ScoreContext.Provider value={{ 
+            score, setScore,
+            level, setLevel,
+            foundEle,setFoundEle,
+            stage,setStage,
+            num,setNum,
+            maxScore,setMaxScore,
+            matchPlayed,setMatchPlayed,
+            totalCoins,setTotalCoins,
+            winGames,setWinGames
+        }}>
             {children}
         </ScoreContext.Provider>
     )

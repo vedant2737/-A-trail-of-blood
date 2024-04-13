@@ -11,14 +11,14 @@ const message = "In the room you have entered, there are three boxes. Inside one
 
 const Win = () => {
   const navigate = useNavigate();
-  const { setScore,setUnlock,setStage} = useContext(ScoreContext)
+  const { setScore,setLevel,setStage} = useContext(ScoreContext)
   const handleHomeClick = () => {
     setStage("stages");
     navigate("/stages");
   }
   const handleNextClick = () => {
     setScore(0);
-    setUnlock(1);
+    setLevel(1);
     setStage("WinPage");
     navigate("/WinPage")
   }
@@ -41,9 +41,9 @@ const Win = () => {
 const Lose = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  const { score,setScore, setUnlock,setStage } = useContext(ScoreContext)
+  const { score,setScore, setLevel,setStage } = useContext(ScoreContext)
   const handleHomeClick = () => {
-    setUnlock(1);
+    setLevel(1);
     setScore(0);
     setStage("stages");
     navigate("/stages");
@@ -82,8 +82,8 @@ const Theme4 = () => {
   const [wrong, setWrong] = useState(false)
   const [show, setShow] = useState(false)
   const [msg, setMsg] = useState(true)
-  const { currentUser, user, setUser } = useContext(UserContext)
-  const { score, setScore, unlock,stage} = useContext(ScoreContext);
+  const { currentUser, user} = useContext(UserContext)
+  const { score, setScore, level,stage,setMatchPlayed,setMaxScore,setWinGames} = useContext(ScoreContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -91,9 +91,9 @@ const Theme4 = () => {
   }, [currentUser])
 
   useEffect(() => {
-    if (unlock >= 4) { setShow(true) }
+    if (level >= 4) { setShow(true) }
     else { navigate("/stages") }
-  }, [unlock]);
+  }, [level]);
 
   useEffect(() => {
     const k = "/" + stage;
@@ -102,7 +102,7 @@ const Theme4 = () => {
 
   useEffect(() => {
     if (score > user.maxScore) {
-      setUser({ ...user, maxScore: score });
+      setMaxScore(score);
     }
   }, [score])
   
@@ -116,12 +116,13 @@ const Theme4 = () => {
       setLives(lives - 1);
       setWrong(true);
       if (lives === 1) {
-        setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
-      }
+        setLose(true); setMatchPlayed(user.matchPlayed+1);
     }
+  }
     else {
       setWin(true);
-      setUser({ ...user, winGames: user.winGames + 1 ,matchPlayed: user.matchPlayed + 1});
+      setMatchPlayed(user.matchPlayed+1);
+      setWinGames(user.winGames+1);
       setScore(score + 10000 + 5000 * lives);
       
       if (k === 0) setKey0(true)

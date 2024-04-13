@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import cross from '../img/cross.png'
 import defaultUserImage from '../img/defautUserImage.webp'
 import Register from './Register'
-import { signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../firebase'
 import { CircularProgress } from '@mui/material'
+import axios from 'axios'
+import { UserContext } from '../context/UserContext'
 
 const Login = ({popup=false,setLogin}) => {
     const [show, setShow] = useState(popup)
     const [err, setErr] = useState("");
     const [register, setRegister] = useState(false);
     const [loading,setLoading] = useState(false);
+    const {setUser,setCurrentUser} = useContext(UserContext);
     const handleClick = () => {
         setShow(!show);
         setRegister(false);
@@ -21,21 +22,33 @@ const Login = ({popup=false,setLogin}) => {
         setRegister(false);
     }
 
-    const handleSubmit =async(e)=>{
+    const handleSubmit = async(e)=>{
         e.preventDefault();
         const email = e.target[0].value;
         const password = e.target[1].value;
          setLoading(true);
-       try{    
-          await signInWithEmailAndPassword(auth, email, password);
-          if(setLogin){setLogin(false);}
-          setShow(!show)
-       } catch(err){
-        setErr("("+err.message.substr(22))
-          setTimeout(() => {
-            setErr("");
-          }, 2000);
-       }
+         try {
+            const response = await fetch(`http://localhost:8080/users/get/${email}`);
+            if (response.ok) {
+              const data = await response.json();
+              console.log(data);
+              setUser(data);
+              setCurrentUser(data);
+              if(setLogin){setLogin(false);}
+            } else {
+              const errorMessage = await response.text();
+              setErr(errorMessage);
+              setTimeout(() => {
+                setErr("");
+              }, 2000);
+            }
+          } catch (error) {
+            console.log(error)
+            setErr('An error occurred while fetching data.');
+            setTimeout(() => {
+                      setErr("");
+                    }, 2000);
+          }
        setLoading(false);
     }
 

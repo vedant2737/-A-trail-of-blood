@@ -13,11 +13,6 @@ const WinPage = () => {
         if (!currentUser) { navigate("/"); }
     }, [currentUser])
 
-    // useEffect(() => {
-    //     if (stage === "WinPage") { setShow(true); }
-    //     const k = "/" + stage;
-    //     navigate(k);
-    // }, [stage])
     const handleClick = () => {
         setStage("stages");
         navigate("/stages");

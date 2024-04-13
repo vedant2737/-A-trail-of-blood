@@ -15,8 +15,8 @@ const message = "Your objective is to find specific items hidden in this constru
 const Win = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext)
-  const { score, setNum,unlock,setUnlock, setFoundEle, setStage } = useContext(ScoreContext)
-  if (unlock < 2) setUnlock(2);
+  const { score, setNum,level,setLevel, setFoundEle, setStage } = useContext(ScoreContext)
+  if (level < 2) setLevel(2);
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
@@ -52,12 +52,12 @@ const Win = () => {
 
 const Lose = () => {
   const navigate = useNavigate();
-  const { score, setScore, setUnlock, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { score, setScore, setLevel, setNum, setFoundEle, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
-    setUnlock(1);
+    setLevel(1);
     setScore(0);
     setStage("stages");
     navigate("/stages");
@@ -99,8 +99,8 @@ const Theme1 = () => {
   const [cRed, setCRed] = useState("")
   const [timer, setTimer] = useState(0)
   const [k, setK] = useState(0)
-  const { score, setScore, setUnlock, unlock, foundEle, setFoundEle, stage, setStage, num, setNum } = useContext(ScoreContext);
-  const { currentUser, user, setUser } = useContext(UserContext)
+  const { score, setScore, setLevel, level, foundEle, setFoundEle, stage, num, setNum, setMatchPlayed,setMaxScore} = useContext(ScoreContext);
+  const { currentUser, user } = useContext(UserContext)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -116,14 +116,14 @@ const Theme1 = () => {
   useEffect(() => {
     const time = setInterval(() => {
       if (timer > 0) {
-        if (timer == 6) { setCRed("c-red") }
+        if (timer === 6) { setCRed("c-red") }
         setTimer(timer - 1);
       } else {
         if (k){
           setLose(true)
           setNum(0);
           setFoundEle([]);
-          setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+          setMatchPlayed(user.matchPlayed+1);
         }
         clearInterval(time);
       }
@@ -133,16 +133,16 @@ const Theme1 = () => {
 
   useEffect(() => {
     if (score > user.maxScore) {
-      setUser({ ...user, maxScore: score });
+      setMaxScore(score);
     }
   }, [score])
 
   useEffect(() => {
-    if (lives == 0) {
+    if (lives === 0) {
       setNum(0);
       setFoundEle([]);
       setLose(true);
-      setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+      setMatchPlayed(user.matchPlayed+1)
     }
   }, [lives])
 
@@ -152,20 +152,20 @@ const Theme1 = () => {
     if (foundEle.length < num) k = foundEle.length;
     for (let i = 0; i < k; i++) {
       let no = foundEle[i];
-      if (no == 1) { setClue1(false); }
-      else if (no == 2) { setClue2(false); }
-      else if (no == 3) { setClue3(false); }
-      else if (no == 4) { setClue4(false); }
+      if (no === 1) { setClue1(false); }
+      else if (no === 2) { setClue2(false); }
+      else if (no === 3) { setClue3(false); }
+      else if (no === 4) { setClue4(false); }
     }
   }, []);
 
   const handleClick = (no, e) => {
-    if (no == 0) { setLives(lives - 1); setWrong(true);}
-    else if (no == 1) { setClue1(false); }
-    else if (no == 2) { setClue2(false); }
-    else if (no == 3) { setClue3(false); }
-    else if (no == 4) { setClue4(false); }
-    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num == 3) { setFoundEle([]); setNum(0); console.log(foundEle); if (unlock < 2) setUnlock(2); setWin(true); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
+    if (no === 0) { setLives(lives - 1); setWrong(true);}
+    else if (no === 1) { setClue1(false); }
+    else if (no === 2) { setClue2(false); }
+    else if (no === 3) { setClue3(false); }
+    else if (no === 4) { setClue4(false); }
+    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num === 3) { setFoundEle([]); setNum(0);  if (level < 2) setLevel(2); setWin(true); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
   }
 
   const handleMsgClick = () => {
@@ -178,6 +178,7 @@ const Theme1 = () => {
   for (let i = 0; i < lives; i++) {
     componentsToRender.push(<img src={heart} key={i} />);
   }
+
   return (
     <>{show && 
       <div className="Theme1">

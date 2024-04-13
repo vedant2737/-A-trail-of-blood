@@ -14,9 +14,9 @@ const message = "I am glad to hear that you have recovered from your injuries. N
 
 const Win = () => {
   const navigate = useNavigate();
-  const { score, unlock,setUnlock, setFoundEle, setNum, setStage } = useContext(ScoreContext)
+  const { score, level,setLevel, setFoundEle, setNum, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
-  if (unlock < 4) setUnlock(4);
+  if (level < 4) setLevel(4);
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
@@ -52,12 +52,12 @@ const Win = () => {
 
 const Lose = () => {
   const navigate = useNavigate();
-  const { score,setScore, setUnlock, setNum, setFoundEle, setStage } = useContext(ScoreContext)
+  const { score,setScore, setLevel, setNum, setFoundEle, setStage } = useContext(ScoreContext)
   const { user } = useContext(UserContext)
   const handleHomeClick = () => {
     setFoundEle([])
     setNum(0)
-    setUnlock(1);
+    setLevel(1);
     setScore(0);
     setStage("stages");
     navigate("/stages");
@@ -101,8 +101,8 @@ const Theme3 = () => {
   const [timer, setTimer] = useState(0)
   const [k, setK] = useState(0)
   const [cRed, setCRed] = useState("")
-  const { score, setScore, setUnlock, unlock, foundEle, setFoundEle, stage, setStage, num, setNum } = useContext(ScoreContext);
-  const { currentUser, user, setUser } = useContext(UserContext)
+  const { score, setScore, setLevel, level, foundEle, setFoundEle, stage, num, setNum,setMatchPlayed,setMaxScore } = useContext(ScoreContext);
+  const { currentUser, user } = useContext(UserContext)
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -110,9 +110,9 @@ const Theme3 = () => {
   }, [currentUser]);
 
   useEffect(() => {
-    if (unlock >= 3) { setShow(true) }
+    if (level >= 3) { setShow(true) }
     else { navigate("/stages") }
-  }, [unlock]);
+  }, [level]);
 
   useEffect(() => {
     const k = "/" + stage;
@@ -129,7 +129,7 @@ const Theme3 = () => {
         setLose(true)
         setNum(0);
         setFoundEle([]);
-        setUser({ ...user, matchPlayed: user.matchPlayed + 1 });
+        setMatchPlayed(user.matchPlayed+1);
         }
         clearInterval(time);
       }
@@ -139,7 +139,7 @@ const Theme3 = () => {
 
   useEffect(() => {
     if (score > user.maxScore) {
-      setUser({ ...user, maxScore: score });
+      setMaxScore(score);
     }
   }, [score])
 
@@ -159,14 +159,14 @@ const Theme3 = () => {
   }, []);
 
   const handleClick = (no, e) => {
-    if (no === 0){ if (lives === 1) { setLose(true); setUser({ ...user, matchPlayed: user.matchPlayed + 1 }); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
+    if (no === 0){ if (lives === 1) { setLose(true);  setMatchPlayed(user.matchPlayed+1); setFoundEle([]); setNum(0); } setLives(lives - 1); setWrong(true); }
     else if (no === 1) { setClue1(false); }
     else if (no === 2) { setClue2(false); }
     else if (no === 3) { setClue3(false); }
     else if (no === 4) { setClue4(false); }
     else if (no === 5) { setClue5(false); }
     else if (no === 6) { setClue6(false); }
-    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num === 5) { setFoundEle([]); setNum(0); setWin(true); if (unlock < 4) setUnlock(4); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
+    if (no > 0) { setScore(score + 50 * timer); setTimer(20); if (num === 5) { setFoundEle([]); setNum(0); setWin(true); if (level < 4) setLevel(4); } setFoundEle([...foundEle, no]); setNum(num + 1); setCRed(""); }
   }
 
   const handleMsgClick=()=>{
