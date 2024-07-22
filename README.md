@@ -1,6 +1,6 @@
-# Bloody Trail - Interactive Treasure Hunting Game
+# 'A' Trail of Blood - Interactive Treasure Hunting Game
 
-Bloody Trail is a treasure hunting game that consists of four levels that a user has to pass to get to the treasure. The game is designed to assess soft skills of its users such as attention to detail, perseverance, and curiosity. Each level is a dead-end, meaning if a user loses at any stage, they have to start from the beginning. The game is built using React, Firebase, and Sketchfab 3D models.
+ 'A' Trail of Blood is a treasure hunting game that consists of four levels that a user has to pass to get to the treasure. The game is designed to assess soft skills of its users such as attention to detail, perseverance, and curiosity. Each level is a dead-end, meaning if a user loses at any stage, they have to start from the beginning. The game is built using React, Firebase, and Sketchfab 3D models.
 
 # Features
 
