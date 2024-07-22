@@ -24,11 +24,11 @@ To run the game, you need to have the following:
 
 # Installation
 
-- Clone the repository: git clone https://github.com/ShwetaGupta2222/Bloody-Trail.git
-- Navigate to the project directory: cd bloody-trail
+- Clone the repository: git clone https://github.com/vedant2737/-A-trail-of-blood.git 
+- Navigate to the project directory: cd -A-trail-of-blood
 - Install dependencies: npm install
 - Start the development server: npm start
-- Open the game in your browser: http://localhost:3000
+- Open the game in your browser
 
 # Usage
 
